@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default function Room() {
   const mountRef = useRef(null);
@@ -14,18 +15,16 @@ export default function Room() {
     scene.background = new THREE.Color("#0a0a0a");
 
     // Camera
-    const camera = new THREE.PerspectiveCamera(
-      60,
-      mountRef.current.clientWidth / mountRef.current.clientHeight,
-      0.1,
-      1000
-    );
-    camera.position.set(0, 5, 10);
-    camera.lookAt(0, 0, 0);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    camera.position.set(4, 6, 0.2);
+    camera.lookAt(0, 1, 0);
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+    renderer.setSize(
+      mountRef.current.clientWidth,
+      mountRef.current.clientHeight
+    );
     mountRef.current.appendChild(renderer.domElement);
 
     // Add OrbitControls
@@ -34,15 +33,21 @@ export default function Room() {
     controls.dampingFactor = 0.05;
     controls.target.set(0, 0, 0);
 
-    // Floor
-    const geometry = new THREE.PlaneGeometry(20, 20);
-    const material = new THREE.MeshStandardMaterial({ color: "#eeeeee" });
-    const floor = new THREE.Mesh(geometry, material);
-    floor.rotation.x = -Math.PI / 2;
-    scene.add(floor);
+    // Desk
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.load(
+      "/threejsModels/gaming_setup_v2_low-poly.glb",
+      function (gltf) {
+        scene.add(gltf.scene);
+      },
+      undefined,
+      function (error) {
+        console.error(error);
+      }
+    );
 
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 5);
     scene.add(ambientLight);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1.1);
     directionalLight.position.set(10, 10, 5);
@@ -54,6 +59,7 @@ export default function Room() {
       animationFrameId = requestAnimationFrame(animate);
       controls.update(); // Important for damping to work!
       renderer.render(scene, camera);
+      console.log(camera.position);
     }
     animate();
 
@@ -63,10 +69,18 @@ export default function Room() {
       controls.dispose(); // Dispose controls!
       mountRef.current.removeChild(renderer.domElement);
       renderer.dispose();
-      geometry.dispose();
-      material.dispose();
+      gltfLoader.manager.itemStart = null;
+      gltfLoader.manager.itemEnd = null;
+      gltfLoader.manager.itemError = null;
+      gltfLoader.manager = null;
+      renderer.forceContextLoss();
+      renderer.context = null;
+      renderer.domElement = null;
+      camera.clear();
+      camera.dispose();
+      scene.dispose();
     };
-  }, []);
+  });
 
   return (
     <div
