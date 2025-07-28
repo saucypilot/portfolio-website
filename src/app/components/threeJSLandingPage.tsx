@@ -2,10 +2,10 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader, GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default function Room() {
-  const mountRef = useRef(null);
+  const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -20,7 +20,8 @@ export default function Room() {
     camera.lookAt(0, 1, 0);
 
     // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setClearColor(0x000000, 0);
     renderer.setSize(
       mountRef.current.clientWidth,
       mountRef.current.clientHeight
@@ -37,11 +38,11 @@ export default function Room() {
     const gltfLoader = new GLTFLoader();
     gltfLoader.load(
       "/threejsModels/gaming_setup_v2_low-poly.glb",
-      function (gltf) {
+      function (gltf: GLTF) {
         scene.add(gltf.scene);
       },
       undefined,
-      function (error) {
+      function (error: Error) {
         console.error(error);
       }
     );
@@ -54,7 +55,7 @@ export default function Room() {
     scene.add(directionalLight);
 
     // Animation loop
-    let animationFrameId;
+    let animationFrameId: number;
     function animate() {
       animationFrameId = requestAnimationFrame(animate);
       controls.update(); // Important for damping to work!
@@ -66,19 +67,14 @@ export default function Room() {
     // Cleanup on unmount
     return () => {
       cancelAnimationFrame(animationFrameId);
-      controls.dispose(); // Dispose controls!
-      mountRef.current.removeChild(renderer.domElement);
+      controls.dispose();
+      if (mountRef.current) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
       renderer.dispose();
-      gltfLoader.manager.itemStart = null;
-      gltfLoader.manager.itemEnd = null;
-      gltfLoader.manager.itemError = null;
-      gltfLoader.manager = null;
+      gltfLoader.manager = new THREE.LoadingManager();
       renderer.forceContextLoss();
-      renderer.context = null;
-      renderer.domElement = null;
-      camera.clear();
-      camera.dispose();
-      scene.dispose();
+
     };
   });
 
