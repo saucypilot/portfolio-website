@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import ThemeToggle from "./components/ThemeToggle";
 
 export const metadata = {
   title: "Portfolio Website",
@@ -13,22 +13,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="">
-        <header className="bg-transparent">
+      <body>
+        <header>
+          <div id="logoText">"Header"</div>
           <nav>
-            <ul className="flex space-x-4">
+            <ul id="footerLinks">
               <li><a href="/home">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/skills">Skills</a></li>
               <li><a href="/projects">Projects</a></li>           
             </ul>
           </nav>
+          <button id="themeToggle" type="button">On</button>
         </header>
         {children}
-        <footer className="bg-transparent text-center p-4 flex justify-between  items-center">
+        <footer>
           <div>&copy; {new Date().getFullYear()} My Portfolio</div>
           <div id="contact-Links" >
             <nav>
