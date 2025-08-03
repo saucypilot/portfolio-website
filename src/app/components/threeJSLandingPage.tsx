@@ -2,7 +2,8 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { GLTFLoader, GLTF } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
 
 export default function Room() {
   const mountRef = useRef<HTMLDivElement>(null);
