@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header>
-          <div id="logoText">"Header"</div>
+          <div id="logoTextforHeader">"Header"</div>
           <nav>
             <ul id="footerLinks">
               <li><a href="/">Home</a></li>
@@ -29,6 +29,7 @@ export default function RootLayout({
         {children}
         <footer>
           <div>&copy; {new Date().getFullYear()} My Portfolio</div>
+          <div id="logoTextForFooter">"Footer"</div>
           <div id="contact-Links" >
             <nav>
               <ul>

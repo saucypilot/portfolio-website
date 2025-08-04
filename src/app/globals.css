@@ -40,6 +40,9 @@ header {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: transparent;
   text-align: center;
   padding: 1rem;
