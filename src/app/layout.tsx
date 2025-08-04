@@ -24,7 +24,7 @@ export default function RootLayout({
               <li><a href="/projects">Projects</a></li>           
             </ul>
           </nav>
-          <button id="themeToggle" type="button">On</button>
+          <ThemeToggle />
         </header>
         {children}
         <footer>
