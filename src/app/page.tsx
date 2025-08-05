@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Room from "./components/threeJSLandingPage";
-import "./page.css";
+import "./styles/homePage.css";
 
 export default function Home() {
   return (
