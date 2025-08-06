@@ -37,6 +37,7 @@ header {
   padding: 1rem;
   background-color: transparent;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 footer {
@@ -49,6 +50,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(10px);
 }
 
 #footerLinks {
