@@ -5,27 +5,18 @@ export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Load saved theme
     const theme = localStorage.getItem("theme");
-    if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setIsDark(false);
-    }
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const dark = theme === "dark" || (!theme && prefersDark);
+    document.documentElement.classList.toggle("dark", dark);
+    setIsDark(dark);
   }, []);
 
   const toggleTheme = () => {
-    if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    }
+    const dark = !isDark;
+    document.documentElement.classList.toggle("dark", dark);
+    localStorage.setItem("theme", dark ? "dark" : "light");
+    setIsDark(dark);
   };
 
   return (
@@ -35,7 +26,14 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label="Toggle Dark Mode"
     >
-      {isDark ? "🌙" : "☀️"}
+      {/* When knob is RIGHT (light mode), show "Light" on the LEFT */}
+      {!isDark && <span className="tt-label tt-left">Light</span>}
+
+      {/* Square knob stays a square, moves to the edge via flex layout */}
+      <span className={`tt-knob ${isDark ? "tt-left" : "tt-right"}`} aria-hidden="true" />
+
+      {/* When knob is LEFT (dark mode), show "Dark" on the RIGHT */}
+      {isDark && <span className="tt-label tt-right">Dark</span>}
     </button>
   );
 }
