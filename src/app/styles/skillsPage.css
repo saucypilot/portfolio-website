@@ -1,10 +1,30 @@
-.skillsSection{
-    margin: 20px;
+main {
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
-.imagesWrapper{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+.skillSections {
+  margin: 20px;
+}
+
+/* Keep your grid nicely wrapped and centered */
+.imagesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Make every logo square in the layout but preserve the real aspect ratio */
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain; /* prevents squish */
+}
+
+#languagesSection,
+#frameworksSection,
+#toolsSection {
+  scroll-margin-top: 96px;
 }

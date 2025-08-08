@@ -1,5 +1,6 @@
 import "./globals.css";
 import ThemeToggle from "./components/ThemeToggle";
+import FooterLinksPopover from "./components/FooterLinksPopover";
 
 export const metadata = {
   title: "Portfolio Website",
@@ -27,20 +28,13 @@ export default function RootLayout({
           <ThemeToggle />
         </header>
         {children}
-        <footer>
-          <div>&copy; {new Date().getFullYear()} My Portfolio</div>
-          <div id="logoTextForFooter">"Footer"</div>
-          <div id="contact-Links" >
-            <nav>
-              <ul>
-                <li><a href="https://www.linkedin.com/in/iriandurian/">LinkedIn</a></li>
-                <li><a href="https://github.com/saucypilot"></a>GitHub</li>
-                <li><a href="https://codepen.io/saucypilot"></a>CodePen</li>
-                <li><a href="https://devpost.com/saucypilot?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">Devpost</a></li>
-              </ul>
-            </nav>
-          </div>
-        </footer>
+          <footer>
+            <div>&copy; {new Date().getFullYear()} My Portfolio</div>
+            <div id="logoTextForFooter">"Footer"</div>
+            <div id="contact-Links" >
+              <FooterLinksPopover />
+            </div>
+          </footer>
         </body>
     </html>
   );

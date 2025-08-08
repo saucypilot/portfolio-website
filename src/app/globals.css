@@ -110,3 +110,95 @@ footer {
 /* helpers for clarity; you can remove if you like */
 #themeToggle .tt-left  { order: 0; }
 #themeToggle .tt-right { order: 2; }
+
+/* ---- Footer links popover ---- */
+
+/* Make the right footer area an anchor for absolute positioning */
+.footer-right,
+.footer-links-popover {
+  position: relative;
+  display: inline-block;
+}
+
+/* Trigger button */
+.links-trigger {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid currentColor;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+/* The popover container sits ABOVE the footer (bottom:100%) and right-aligned */
+.links-popover {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  margin-bottom: 0.5rem;
+  z-index: 50;
+  pointer-events: none;       /* prevent stray hover when closed */
+  opacity: 0;
+  transform: translateY(6px) scale(0.98);
+  transform-origin: bottom right;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.links-popover.open {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Panel styling */
+.links-popover-inner {
+  border: 1px solid var(--foreground);
+  background: var(--background);
+  color: var(--foreground);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  min-width: 14rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+  backdrop-filter: saturate(120%) blur(4px);
+}
+
+.links-popover-inner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.links-popover-inner a {
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0.25rem;
+  border-radius: 0.375rem;
+}
+
+.links-popover-inner a:hover,
+.links-popover-inner a:focus {
+  text-decoration: underline;
+}
+
+/* Little caret/arrow */
+.links-popover-caret {
+  position: absolute;
+  right: 0.75rem;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  background: var(--background);
+  border-left: 1px solid var(--foreground);
+  border-bottom: 1px solid var(--foreground);
+  transform: rotate(45deg);
+}
+
+/* Respect reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  .links-popover,
+  .links-popover.open {
+    transition: none;
+    transform: none;
+  }
+}
