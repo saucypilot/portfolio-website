@@ -65,6 +65,25 @@ const PageName = () => {
           space.
         </p>
       </div>
+      <div className="projectCard">
+        <Image src="/projectPageAssets/hackUTA.png" alt="HackUTA website picture" width={500} height={500}/>
+        <h1>2024 HackUTA Website</h1>
+        <p>
+          This is the official website for HackUTA 2024, a 24-hour hackathon
+          event held at the University of Texas at Arlington. The website was
+          built using React and Next.js, and features a modern design with
+          information about the event, schedule, onboarding, and more.
+        </p>
+      </div>
+      <div className="projectCard">
+        <Image src="/projectPageAssets/xquisite.png" alt="Xquisite Dance center website screenshot" width={500} height={500}/>
+        <h1>Xquisite Dance Center Website</h1>
+        <p>
+          This is the official website for Xquisite Dance Center, a dance studio
+          located in Arlington, Texas. The website was built using React and
+          Next.js, and features a modern design.
+        </p>
+      </div>
     </main>
   );
 };
