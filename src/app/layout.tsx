@@ -1,6 +1,7 @@
 import "./globals.css";
 import ThemeToggle from "./components/ThemeToggle";
 import FooterLinksPopover from "./components/FooterLinksPopover";
+import Providers from "./provider";
 
 export const metadata = {
   title: "Portfolio Website",
@@ -13,29 +14,42 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <style>{`html{color-scheme: light} html.dark{color-scheme: dark}`}</style>
+      </head>
       <body>
-        <header>
-          <div id="logoTextforHeader">"HEADER"</div>
-          <nav>
-            <ul id="footerLinks">
-              <li><a href="/">Home</a></li>
-              <li><a href="/pages/about">About</a></li>
-              <li><a href="/pages/skills">Skills</a></li>
-              <li><a href="/pages/projects">Projects</a></li>           
-            </ul>
-          </nav>
-          <ThemeToggle />
-        </header>
-        {children}
+        <Providers>
+          <header>
+            <div id="logoTextforHeader">"HEADER"</div>
+            <nav>
+              <ul id="footerLinks">
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/pages/about">About</a>
+                </li>
+                <li>
+                  <a href="/pages/skills">Skills</a>
+                </li>
+                <li>
+                  <a href="/pages/projects">Projects</a>
+                </li>
+              </ul>
+            </nav>
+            <ThemeToggle />
+          </header>
+          {children}
           <footer>
             <div>&copy; {new Date().getFullYear()} My Portfolio</div>
             <div id="logoTextForFooter">"FOOTER"</div>
-            <div id="contact-Links" >
+            <div id="contact-Links">
               <FooterLinksPopover />
             </div>
           </footer>
-        </body>
+        </Providers>
+      </body>
     </html>
   );
 }

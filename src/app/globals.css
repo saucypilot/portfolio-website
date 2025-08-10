@@ -111,6 +111,11 @@ footer {
 #themeToggle .tt-left  { order: 0; }
 #themeToggle .tt-right { order: 2; }
 
+#themeToggle[data-mounted="false"] .tt-knob,
+#themeToggle[data-mounted="false"] .tt-label {
+  visibility: hidden; /* keeps layout without showing wrong state */
+}
+
 /* ---- Footer links popover ---- */
 
 /* Make the right footer area an anchor for absolute positioning */

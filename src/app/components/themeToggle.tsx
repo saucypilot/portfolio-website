@@ -1,39 +1,32 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client'
+
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
+  const { theme, resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const dark = theme === "dark" || (!theme && prefersDark);
-    document.documentElement.classList.toggle("dark", dark);
-    setIsDark(dark);
-  }, []);
+  useEffect(() => setMounted(true), [])
 
-  const toggleTheme = () => {
-    const dark = !isDark;
-    document.documentElement.classList.toggle("dark", dark);
-    localStorage.setItem("theme", dark ? "dark" : "light");
-    setIsDark(dark);
-  };
+  // Only trust the theme once mounted to avoid a "light" flash
+  const isDark =
+    mounted && ((theme === 'dark') || (theme === 'system' && resolvedTheme === 'dark'))
+
+  const toggle = () => setTheme(isDark ? 'light' : 'dark')
 
   return (
     <button
       id="themeToggle"
       type="button"
-      onClick={toggleTheme}
-      aria-label="Toggle Dark Mode"
+      onClick={toggle}
+      aria-label="Toggle dark mode"
+      aria-pressed={isDark ? true : false}
+      data-mounted={mounted}
     >
-      {/* When knob is RIGHT (light mode), show "Light" on the LEFT */}
       {!isDark && <span className="tt-label tt-left">Light</span>}
-
-      {/* Square knob stays a square, moves to the edge via flex layout */}
-      <span className={`tt-knob ${isDark ? "tt-left" : "tt-right"}`} aria-hidden="true" />
-
-      {/* When knob is LEFT (dark mode), show "Dark" on the RIGHT */}
+      <span className={`tt-knob ${isDark ? 'tt-left' : 'tt-right'}`} aria-hidden="true" />
       {isDark && <span className="tt-label tt-right">Dark</span>}
     </button>
-  );
+  )
 }
