@@ -42,10 +42,46 @@ export default function FooterLinksPopover() {
       >
         <div className="links-popover-inner">
           <ul>
-            <li><a role="menuitem" href="https://www.linkedin.com/in/iriandurian/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a role="menuitem" href="https://github.com/saucypilot" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a role="menuitem" href="https://codepen.io/saucypilot" target="_blank" rel="noopener noreferrer">CodePen</a></li>
-            <li><a role="menuitem" href="https://devpost.com/saucypilot?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank" rel="noopener noreferrer">Devpost</a></li>
+            <li>
+              <a
+                role="menuitem"
+                href="https://www.linkedin.com/in/iriandurian/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                role="menuitem"
+                href="https://github.com/saucypilot"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                role="menuitem"
+                href="https://codepen.io/saucypilot"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CodePen
+              </a>
+            </li>
+            <li>
+              <a
+                role="menuitem"
+                href="https://devpost.com/saucypilot?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Devpost
+              </a>
+            </li>
           </ul>
         </div>
         <span className="links-popover-caret" aria-hidden="true" />
