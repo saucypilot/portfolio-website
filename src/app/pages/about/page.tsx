@@ -1,5 +1,6 @@
 import React from "react";
 import '../../styles/aboutMePage.css';
+import InterestsShowcase from "../../components/3DSlideShow";
 
 const PageName = () => {
   return (
@@ -34,15 +35,7 @@ const PageName = () => {
         </p>
       </div>
       <div id="thirdAboutSection" className="aboutSectionWrappers">
-        <h1>My other interests</h1>
-        <div className="interests-slideshow">
-          <div>Racing simulators</div>
-          <div>Aviation and flight sims</div>
-          <div>Milsims (military simulation games)</div>
-          <div>Chess</div>
-          <div>Guitar</div>
-        </div>
-        <button type="button" className="interests-button">Next</button>
+        <InterestsShowcase />
       </div>
     </main>
   );
