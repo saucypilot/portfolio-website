@@ -16,7 +16,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <style>{`html{color-scheme: light} html.dark{color-scheme: dark}`}</style>
       </head>
       <body>
         <Providers>

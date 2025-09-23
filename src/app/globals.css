@@ -77,6 +77,11 @@ footer {
 /* ==========================================================================
    4) Theme toggle component (compact, accessible structure)
    -------------------------------------------------------------------------- */
+  
+/* ensure the browser color-scheme is set via CSS (prevents SSR/CSR mismatch) */
+html { color-scheme: light; }
+html.dark { color-scheme: dark; }
+
 /* Toggle container */
 #themeToggle {
   background-color: #f86d00;
