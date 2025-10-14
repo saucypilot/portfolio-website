@@ -236,12 +236,6 @@ export default function InterestsShowcase() {
   );
 }
 
-useGLTF.preload("/porsche_911_gt2_rs_with_angle_eyes.glb");
-useGLTF.preload("/f4u-4b_corsair_custom_payload_war_thunder.glb");
-useGLTF.preload("/gaming_setup_v2_low-poly.glb");
-useGLTF.preload("/standing_desk.glb");
-useGLTF.preload("/aula_f75_mechanical_keyboard.glb");
-
 // =============================================
 // pages/about/page.tsx (drop-in replacement snippet)
 // Replace only the "My other interests" section with the component

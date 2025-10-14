@@ -1,6 +1,6 @@
 import React from "react";
-import '../../styles/aboutMePage.css';
-import InterestsShowcase from "../../components/3DSlideShow";
+import "../../styles/aboutMePage.css";
+import InterestsShowcaseClient from "./InterestsShowcaseClient";
 
 const PageName = () => {
   return (
@@ -35,7 +35,7 @@ const PageName = () => {
         </p>
       </div>
       <div id="thirdAboutSection" className="aboutSectionWrappers">
-        <InterestsShowcase />
+        <InterestsShowcaseClient />
       </div>
     </main>
   );

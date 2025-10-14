@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import "../../styles/projectsPage.css";
+import ProjectVideo from "./ProjectVideo";
 
 const PageName = () => {
   return (
@@ -23,9 +24,9 @@ const PageName = () => {
         </p>
       </div>
       <div className="projectCard">
-        <video
+        <ProjectVideo
           src="/projectPageAssets/solarSystem.webm"
-          alt="Sand simulator animation"
+          aria-label="Solar system simulation demo"
           loop
           autoPlay
           playsInline
@@ -44,9 +45,9 @@ const PageName = () => {
         </p>
       </div>
       <div className="projectCard">
-        <video
+        <ProjectVideo
           src="/projectPageAssets/threejsCubeGame.webm"
-          alt="Cube game"
+          aria-label="Cube game demo"
           loop
           autoPlay
           playsInline
