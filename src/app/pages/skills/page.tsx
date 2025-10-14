@@ -16,6 +16,7 @@ const PageName = () => {
           <Image src="/languagesImages/assembly.png" alt="Assembly language logo" width={100} height={100} />
           <Image src="/languagesImages/python.png" alt="Python logo" width={100} height={100} />
           <Image src="/languagesImages/java.png" alt="Java logo" width={100} height={100} />
+          <Image src="/languagesImages/kotlin.png" alt="Kotlin logo" width={100} height={100} />
         </div>
       </div>
       <div id="frameworksSection" className="skillSections">

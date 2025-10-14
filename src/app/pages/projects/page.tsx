@@ -66,7 +66,12 @@ const PageName = () => {
         </p>
       </div>
       <div className="projectCard">
-        <Image src="/projectPageAssets/hackUTA.png" alt="HackUTA website picture" width={500} height={500}/>
+        <Image
+          src="/projectPageAssets/hackUTA.png"
+          alt="HackUTA website picture"
+          width={500}
+          height={500}
+        />
         <h1>2024 HackUTA Website</h1>
         <p>
           This is the official website for HackUTA 2024, a 24-hour hackathon
@@ -76,12 +81,32 @@ const PageName = () => {
         </p>
       </div>
       <div className="projectCard">
-        <Image src="/projectPageAssets/xquisite.png" alt="Xquisite Dance center website screenshot" width={500} height={500}/>
+        <Image
+          src="/projectPageAssets/xquisite.png"
+          alt="Xquisite Dance center website screenshot"
+          width={500}
+          height={500}
+        />
         <h1>Xquisite Dance Center Website</h1>
         <p>
           This is the official website for Xquisite Dance Center, a dance studio
           located in Arlington, Texas. The website was built using React and
           Next.js, and features a modern design.
+        </p>
+      </div>
+      <div className="projectCard">
+        <Image
+          src="/projectPageAssets/trivio.gif"
+          alt="Triv.io Gif"
+          width={500}
+          height={500}
+        />
+        <h1>Triv.io</h1>
+        <p>
+          A web application that allows users to upload notes in any format and
+          turn them into quizzes using Gemini AI. It also allows people to join
+          the quiz too and include leaderboards. You can think it as Kahoot kind
+          of. It uses Auth0 for authentication and React.js for the frontend.
         </p>
       </div>
     </main>
