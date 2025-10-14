@@ -10,6 +10,27 @@
     top: 20px;
     left: 20px;
     font-size: 2.5rem;
+    display: inline-block;
+}
+
+#firstHeading .typewriter{
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid currentColor;
+    animation: 
+        typewriter 5s steps(50, end) 1s 1 forwards, 
+        blinkingCursor 500ms step-end infinite;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkingCursor{
+    from { border-right-color: currentColor; }
+    to { border-right-color: transparent; }
 }
 
 #secondSection {

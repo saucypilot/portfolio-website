@@ -1,6 +1,3 @@
-// =============================================
-// Requires: three, @react-three/fiber, @react-three/drei, framer-motion
-// =============================================
 "use client";
 import React, {
   Suspense,
