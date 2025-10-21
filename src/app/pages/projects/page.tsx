@@ -12,6 +12,7 @@ const PageName = () => {
           alt="Sand simulator animation"
           width={500}
           height={500}
+          className="projectCard__media"
         />
         <h1>Sand simulator</h1>
         <p>
@@ -22,6 +23,29 @@ const PageName = () => {
           damping, and collision response in a real-time interactive
           environment.
         </p>
+        <ul className="projectCard__stack" aria-label="Technologies used">
+          <li>
+            <a href="https://www.libsdl.org/" target="_blank" rel="noreferrer">
+              SDL2
+            </a>
+          </li>
+          <li>
+            <a href="https://isocpp.org/" target="_blank" rel="noreferrer">
+              C++
+            </a>
+          </li>
+        </ul>
+        <div className="projectCard__links">
+          <a
+            className="projectCard__link"
+            href="https://github.com/saucypilot/Sand-simulator"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open sand simulator project"
+          >
+            Visit project
+          </a>
+        </div>
       </div>
       <div className="projectCard">
         <ProjectVideo
@@ -34,6 +58,7 @@ const PageName = () => {
           muted
           width={500}
           height={500}
+          className="projectCard__media"
         />
         <h1>Solar system simulator</h1>
         <p>
@@ -43,6 +68,33 @@ const PageName = () => {
           too much coffee. This is a visual simulation—not scientifically
           accurate, but definitely fun to explore.
         </p>
+        <ul className="projectCard__stack" aria-label="Technologies used">
+          <li>
+            <a href="https://threejs.org/" target="_blank" rel="noreferrer">
+              Three.js
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              rel="noreferrer"
+            >
+              JavaScript
+            </a>
+          </li>
+        </ul>
+        <div className="projectCard__links">
+          <a
+            className="projectCard__link"
+            href="https://github.com/saucypilot/Solar-system-simulator"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open solar system simulator project"
+          >
+            Visit project
+          </a>
+        </div>
       </div>
       <div className="projectCard">
         <ProjectVideo
@@ -55,6 +107,7 @@ const PageName = () => {
           muted
           width={500}
           height={500}
+          className="projectCard__media"
         />
 
         <h1>Cube game</h1>
@@ -65,6 +118,33 @@ const PageName = () => {
           basic physics such as gravity, velocity, and collision detection in 3D
           space.
         </p>
+        <ul className="projectCard__stack" aria-label="Technologies used">
+          <li>
+            <a href="https://threejs.org/" target="_blank" rel="noreferrer">
+              Three.js
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              rel="noreferrer"
+            >
+              JavaScript
+            </a>
+          </li>
+        </ul>
+        <div className="projectCard__links">
+          <a
+            className="projectCard__link"
+            href="https://github.com/saucypilot/threejs-cube-game"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open cube game project"
+          >
+            Visit project
+          </a>
+        </div>
       </div>
       <div className="projectCard">
         <Image
@@ -72,6 +152,7 @@ const PageName = () => {
           alt="HackUTA website picture"
           width={500}
           height={500}
+          className="projectCard__media"
         />
         <h1>2024 HackUTA Website</h1>
         <p>
@@ -80,6 +161,29 @@ const PageName = () => {
           built using React and Next.js, and features a modern design with
           information about the event, schedule, onboarding, and more.
         </p>
+        <ul className="projectCard__stack" aria-label="Technologies used">
+          <li>
+            <a href="https://react.dev/" target="_blank" rel="noreferrer">
+              React
+            </a>
+          </li>
+          <li>
+            <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+              Next.js
+            </a>
+          </li>
+        </ul>
+        <div className="projectCard__links">
+          <a
+            className="projectCard__link"
+            href="https://hackuta.org/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open HackUTA website project"
+          >
+            Visit project
+          </a>
+        </div>
       </div>
       <div className="projectCard">
         <Image
@@ -87,6 +191,7 @@ const PageName = () => {
           alt="Xquisite Dance center website screenshot"
           width={500}
           height={500}
+          className="projectCard__media"
         />
         <h1>Xquisite Dance Center Website</h1>
         <p>
@@ -94,6 +199,29 @@ const PageName = () => {
           located in Arlington, Texas. The website was built using React and
           Next.js, and features a modern design.
         </p>
+        <ul className="projectCard__stack" aria-label="Technologies used">
+          <li>
+            <a href="https://react.dev/" target="_blank" rel="noreferrer">
+              React
+            </a>
+          </li>
+          <li>
+            <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
+              Next.js
+            </a>
+          </li>
+        </ul>
+        <div className="projectCard__links">
+          <a
+            className="projectCard__link"
+            href="https://xquisitedancecenter-gljht37d3-saucypilots-projects.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Xquisite Dance Center website project"
+          >
+            Visit project
+          </a>
+        </div>
       </div>
       <div className="projectCard">
         <Image
@@ -101,6 +229,7 @@ const PageName = () => {
           alt="Triv.io Gif"
           width={500}
           height={500}
+          className="projectCard__media"
         />
         <h1>Triv.io</h1>
         <p>
@@ -109,6 +238,43 @@ const PageName = () => {
           the quiz too and include leaderboards. You can think it as Kahoot kind
           of. It uses Auth0 for authentication and React.js for the frontend.
         </p>
+        <ul className="projectCard__stack" aria-label="Technologies used">
+          <li>
+            <a href="https://react.dev/" target="_blank" rel="noreferrer">
+              React
+            </a>
+          </li>
+          <li>
+            <a href="https://auth0.com/" target="_blank" rel="noreferrer">
+              Auth0
+            </a>
+          </li>
+          <li>
+            <a href="https://gemini.google/" target="_blank" rel="noreferrer">
+              Gemini API
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              target="_blank"
+              rel="noreferrer"
+            >
+              JavaScript
+            </a>
+          </li>
+        </ul>
+        <div className="projectCard__links">
+          <a
+            className="projectCard__link"
+            href="https://github.com/Ashishrupani/Triv.io"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Triv.io project"
+          >
+            Visit project
+          </a>
+        </div>
       </div>
     </main>
   );
