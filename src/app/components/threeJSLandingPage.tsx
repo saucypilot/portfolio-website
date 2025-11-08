@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export default function Room() {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ export default function Room() {
         scene.add(gltf.scene);
       },
       undefined,
-      function (error: Error) {
+      function (error: unknown) {
         console.error(error);
       }
     );
