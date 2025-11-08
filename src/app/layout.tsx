@@ -1,5 +1,5 @@
 import "./globals.css";
-import ThemeToggle from "./components/ThemeToggle";
+import ThemeToggle from "./components/themeToggle";
 import FooterLinksPopover from "./components/FooterLinksPopover";
 import Providers from "./provider";
 
