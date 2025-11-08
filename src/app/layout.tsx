@@ -2,6 +2,7 @@ import "./globals.css";
 import ThemeToggle from "./components/themeToggle";
 import FooterLinksPopover from "./components/FooterLinksPopover";
 import Providers from "./provider";
+import Link from "next/link";
 
 export const metadata = {
   title: "Portfolio Website",
@@ -20,20 +21,20 @@ export default function RootLayout({
       <body>
         <Providers>
           <header>
-            <div id="logoTextforHeader">"HEADER"</div>
+            <div id="logoTextforHeader">HEADER</div>
             <nav>
               <ul id="footerLinks">
                 <li>
-                  <a href="/">Home</a>
+                  <Link href="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/pages/about">About</a>
+                  <Link href="/pages/about">About</Link>
                 </li>
                 <li>
-                  <a href="/pages/skills">Skills</a>
+                  <Link href="/pages/skills">Skills</Link>
                 </li>
                 <li>
-                  <a href="/pages/projects">Projects</a>
+                  <Link href="/pages/projects">Projects</Link>
                 </li>
               </ul>
             </nav>
@@ -42,7 +43,7 @@ export default function RootLayout({
           {children}
           <footer>
             <div>&copy; {new Date().getFullYear()} My Portfolio</div>
-            <div id="logoTextForFooter">"FOOTER"</div>
+            <div id="logoTextForFooter">FOOTER</div>
             <div id="contact-Links">
               <FooterLinksPopover />
             </div>

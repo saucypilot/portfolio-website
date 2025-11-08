@@ -17,6 +17,7 @@ import {
   Float,
 } from "@react-three/drei";
 import { motion, AnimatePresence } from "framer-motion";
+import * as THREE from "three";
 
 // ---- Types ----
 type Slide = {
@@ -48,13 +49,14 @@ function Model({
 
 // ---- Slide 3D Scene ----
 function SlideScene({ slide }: { slide: Slide }) {
+  const transparentBackground: [THREE.ColorRepresentation] = ["transparent"];
   return (
     <Canvas
       camera={{ position: [0.8, 0.8, 1.6], fov: 45 }}
       dpr={[1, 2]}
       className="rounded-2xl"
     >
-      <color attach="background" args={["transparent"] as unknown as any} />
+      <color attach="background" args={transparentBackground} />
       <ambientLight intensity={0.6} />
       <directionalLight position={[3, 2, 2]} intensity={1.1} />
       <Suspense

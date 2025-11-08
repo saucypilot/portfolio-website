@@ -9,7 +9,8 @@ export default function Room() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!mountRef.current) return;
+    const container = mountRef.current;
+    if (!container) return;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -23,11 +24,8 @@ export default function Room() {
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor(0x000000, 0);
-    renderer.setSize(
-      mountRef.current.clientWidth,
-      mountRef.current.clientHeight
-    );
-    mountRef.current.appendChild(renderer.domElement);
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
 
     // Add OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -61,7 +59,6 @@ export default function Room() {
       animationFrameId = requestAnimationFrame(animate);
       controls.update(); // Important for damping to work!
       renderer.render(scene, camera);
-      console.log(camera.position);
     }
     animate();
 
@@ -69,15 +66,15 @@ export default function Room() {
     return () => {
       cancelAnimationFrame(animationFrameId);
       controls.dispose();
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (container.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
       }
       renderer.dispose();
       gltfLoader.manager = new THREE.LoadingManager();
       renderer.forceContextLoss();
 
     };
-  });
+  }, []);
 
   return (
     <div

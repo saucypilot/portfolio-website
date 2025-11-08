@@ -64,7 +64,7 @@ const PageName = () => {
         <p>
           A 3D interactive simulation of our solar system built with Three.js,
           featuring orbiting planets, moons, an asteroid belt, and even shooting
-          stars. It's basically what you'd get if NASA had a graphics API and
+          stars. It&rsquo;s basically what you&rsquo;d get if NASA had a graphics API and
           too much coffee. This is a visual simulation—not scientifically
           accurate, but definitely fun to explore.
         </p>
