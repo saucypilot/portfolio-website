@@ -32,6 +32,7 @@ const PageName = () => {
           <Image src="/frameworkImages/mongoDB.png" alt="MongoDB logo" width={100} height={100} />
           <Image src="/frameworkImages/nodejs.png" alt="Node.js logo" width={100} height={100} />
           <Image src="/frameworkImages/sql.webp" alt="SQL logo" width={100} height={100} />
+          <Image src="/frameworkImages/openCV.png" alt="OpenCV logo" width={100} height={100} />
         </div>
       </div>
       <div id="toolsSection" className="skillSections">
@@ -48,6 +49,7 @@ const PageName = () => {
           <Image src="/toolsImages/windows.png" alt="Windows logo" width={100} height={100} />
           <Image src="/toolsImages/linux.png" alt="Linux logo" width={100} height={100} />
           <Image src="/toolsImages/oracle.png" alt="Oracle logo" width={100} height={100} />
+          <Image src="/toolsImages/androidStudio.png" alt="Android logo" width={100} height={100} />
         </div>
       </div>
     </main>

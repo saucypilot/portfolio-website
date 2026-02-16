@@ -64,9 +64,9 @@ const PageName = () => {
         <p>
           A 3D interactive simulation of our solar system built with Three.js,
           featuring orbiting planets, moons, an asteroid belt, and even shooting
-          stars. It&rsquo;s basically what you&rsquo;d get if NASA had a graphics API and
-          too much coffee. This is a visual simulation—not scientifically
-          accurate, but definitely fun to explore.
+          stars. It&rsquo;s basically what you&rsquo;d get if NASA had a
+          graphics API and too much coffee. This is a visual simulation—not
+          scientifically accurate, but definitely fun to explore.
         </p>
         <ul className="projectCard__stack" aria-label="Technologies used">
           <li>
@@ -271,6 +271,87 @@ const PageName = () => {
             target="_blank"
             rel="noreferrer"
             aria-label="Open Triv.io project"
+          >
+            Visit project
+          </a>
+        </div>
+      </div>
+      <div className="projectCard">
+        <Image
+          src="/projectPageAssets/project.png"
+          alt="Project screenshot"
+          width={500}
+          height={500}
+          className="projectCard__media"
+        />
+        <h1>Drowsiness detector</h1>
+        <p>
+          Real-Time Webcam Drowsiness Detection System is a computer vision
+          application designed to enhance safety during long tasks like driving
+          or late-night coding sessions. Built using Python, OpenCV, and
+          MediaPipe, the system monitors facial landmarks in real-time to detect
+          signs of fatigue through two primary biometric indicators: Eye Aspect
+          Ratio (EAR) and head pose analysis.
+        </p>
+        <ul className="projectCard__stack" aria-label="Technologies used">
+          <li>
+            <a href="https://www.python.org/" target="_blank" rel="noreferrer">
+              Python
+            </a>
+          </li>
+          <li>
+            <a href="https://opencv.org/" target="_blank" rel="noreferrer">
+              OpenCV
+            </a>
+          </li>
+          <li>
+            <a href="https://mediapipe.dev/" target="_blank" rel="noreferrer">
+              MediaPipe
+            </a>
+          </li>
+        </ul>
+        <div className="projectCard__links">
+          <a
+            className="projectCard__link"
+            href="https://github.com/saucypilot/Drowsiness-detector"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open project"
+          >
+            Visit project
+          </a>
+        </div>
+      </div>
+      <div className="projectCard">
+        <Image
+          src="/projectPageAssets/project-image.png"
+          alt="Project screenshot"
+          width={500}
+          height={500}
+          className="projectCard__media"
+        />
+        <h1>Fluid simulation</h1>
+        <p>
+          This WebGL Fluid Simulation (Lite) is a high-performance, interactive
+          physics engine that brings fluid dynamics to the browser. Developed
+          using WebGL2, the project implements a stable Navier-Stokes solver to
+          simulate the movement, swirling, and mixing of colorful dyes in
+          real-time.
+        </p>
+        <ul className="projectCard__stack" aria-label="Technologies used">
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noreferrer">
+              WebGL2
+            </a>
+          </li>
+        </ul>
+        <div className="projectCard__links">
+          <a
+            className="projectCard__link"
+            href="https://github.com/your-repo"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open project"
           >
             Visit project
           </a>
