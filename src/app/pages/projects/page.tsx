@@ -334,7 +334,7 @@ const PageName = () => {
         <p>
           This project is an interactive fluid dynamics simulation built with
           WebGL2 that solves the Navier-Stokes equations for incompressible flow
-          in real-time. It uses a GPU-accelerated "ping-pong" FBO architecture
+          in real-time. It uses a GPU-accelerated &quot;ping-pong&quot; FBO architecture
           to efficiently manage semi-Lagrangian advection and Jacobi pressure
           solvers. To maintain visual detail, I implemented vorticity
           confinement to reinforce swirling motions that would otherwise
