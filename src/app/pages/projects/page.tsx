@@ -278,7 +278,7 @@ const PageName = () => {
       </div>
       <div className="projectCard">
         <Image
-          src="/projectPageAssets/project.png"
+          src="/projectPageAssets/drowsinessDetector.gif"
           alt="Project screenshot"
           width={500}
           height={500}
@@ -324,7 +324,7 @@ const PageName = () => {
       </div>
       <div className="projectCard">
         <Image
-          src="/projectPageAssets/project-image.png"
+          src="/projectPageAssets/fluidSimulation.gif"
           alt="Project screenshot"
           width={500}
           height={500}
@@ -332,15 +332,23 @@ const PageName = () => {
         />
         <h1>Fluid simulation</h1>
         <p>
-          This WebGL Fluid Simulation (Lite) is a high-performance, interactive
-          physics engine that brings fluid dynamics to the browser. Developed
-          using WebGL2, the project implements a stable Navier-Stokes solver to
-          simulate the movement, swirling, and mixing of colorful dyes in
-          real-time.
+          This project is an interactive fluid dynamics simulation built with
+          WebGL2 that solves the Navier-Stokes equations for incompressible flow
+          in real-time. It uses a GPU-accelerated "ping-pong" FBO architecture
+          to efficiently manage semi-Lagrangian advection and Jacobi pressure
+          solvers. To maintain visual detail, I implemented vorticity
+          confinement to reinforce swirling motions that would otherwise
+          dissipate. The simulation features a filmic tonemapping curve for
+          high-dynamic-range visuals and supports multi-touch interaction for
+          stirring the fluid and injecting randomized dye colors.
         </p>
         <ul className="projectCard__stack" aria-label="Technologies used">
           <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank" rel="noreferrer">
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API"
+              target="_blank"
+              rel="noreferrer"
+            >
               WebGL2
             </a>
           </li>
@@ -348,7 +356,7 @@ const PageName = () => {
         <div className="projectCard__links">
           <a
             className="projectCard__link"
-            href="https://github.com/your-repo"
+            href="https://github.com/saucypilot/webGL-Fluid-Simulation"
             target="_blank"
             rel="noreferrer"
             aria-label="Open project"
