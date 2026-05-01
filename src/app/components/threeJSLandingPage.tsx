@@ -17,7 +17,12 @@ export default function Room() {
     scene.background = new THREE.Color("#0a0a0a");
 
     // Camera
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      container.clientWidth / container.clientHeight,
+      0.1,
+      1000
+    );
     camera.position.set(4, 6, 0.2);
     camera.lookAt(0, 1, 0);
 
@@ -25,6 +30,7 @@ export default function Room() {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setClearColor(0x000000, 0);
     renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
     // Add OrbitControls
@@ -62,9 +68,22 @@ export default function Room() {
     }
     animate();
 
+    const handleResize = () => {
+      if (!container) return;
+
+      const { clientWidth, clientHeight } = container;
+      camera.aspect = clientWidth / clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(clientWidth, clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    };
+
+    window.addEventListener("resize", handleResize);
+
     // Cleanup on unmount
     return () => {
       cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("resize", handleResize);
       controls.dispose();
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
@@ -79,7 +98,7 @@ export default function Room() {
   return (
     <div
       ref={mountRef}
-      style={{ width: "100vw", height: "70vh", position: "relative" }}
+      className="roomCanvas"
     />
   );
 }

@@ -13,7 +13,8 @@ main{
     align-items: center;
     padding: 20px;
     margin-top: 20px;
-    height: 100vh;
+    min-height: 100vh;
+    gap: 24px;
 }
 
 .aboutSectionWrappers h1 {
@@ -24,6 +25,7 @@ main{
 
 .aboutSectionWrappers p{
     width: 50vw;
+    line-height: 1.7;
 }
 
 .interests-showcase-fallback {
@@ -37,13 +39,23 @@ main{
     text-align: center;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     .aboutSectionWrappers {
       flex-direction: column;
       align-items: flex-start;
+      min-height: auto;
+      width: 100%;
+      padding: 24px 16px;
     }
-    .aboutSectionWrappers h1, .aboutSectionWrappers p {
-      width: 100vw;
+
+    .aboutSectionWrappers h1,
+    .aboutSectionWrappers p {
+      width: 100%;
     }
-  }
+
+    .aboutSectionWrappers h1 {
+      font-size: 1.75rem;
+      padding: 0;
+    }
+}
   

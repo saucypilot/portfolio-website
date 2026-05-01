@@ -1,0 +1,17 @@
+
+> portfolio-website@0.1.0 dev
+> next dev --port 3003
+
+   ▲ Next.js 15.4.2
+   - Local:        http://localhost:3003
+   - Network:      http://192.168.238.1:3003
+
+ ✓ Starting...
+ ✓ Ready in 1877ms
+ ○ Compiling / ...
+ ✓ Compiled / in 5.1s (666 modules)
+ GET / 200 in 5654ms
+ GET / 200 in 5689ms
+ GET / 200 in 100ms
+ ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins

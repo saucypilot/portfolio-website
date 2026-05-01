@@ -14,6 +14,8 @@ export default function Home() {
           alt="headshot"
           width={500}
           height={500}
+          priority
+          className="heroHeadshot"
         />
       </div>
       <div id="secondSection">
