@@ -4,7 +4,7 @@ import InterestsShowcaseClient from "./InterestsShowcaseClient";
 
 const PageName = () => {
   return (
-    <main>
+    <main className="aboutPage">
       <div id="firstAboutSection" className="aboutSectionWrappers">
         <h1>How did I start?</h1>
         <p>
