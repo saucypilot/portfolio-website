@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Room from "./components/threeJSLandingPage";
+import TypewriterText from "./components/TypewriterText";
 import "./styles/homePage.css";
 
 export default function Home() {
@@ -7,7 +8,10 @@ export default function Home() {
     <div id="landingPage">
       <div id="firstSection">
         <h1 id="firstHeading">
-          <span className="typewriter">Hey, I&rsquo;m Irian. Welcome to my website.</span>
+          <TypewriterText
+            className="typewriter"
+            text="Hey, I’m Irian. Welcome to my website."
+          />
         </h1>
         <Image
           src="/headshot.png"

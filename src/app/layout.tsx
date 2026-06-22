@@ -3,6 +3,12 @@ import ThemeToggle from "./components/themeToggle";
 import FooterLinksPopover from "./components/FooterLinksPopover";
 import Providers from "./provider";
 import Link from "next/link";
+import { JetBrains_Mono } from "next/font/google";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
 
 export const metadata = {
   title: "Portfolio Website",
@@ -18,7 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
       </head>
-      <body>
+      <body className={jetBrainsMono.variable}>
         <Providers>
           <header>
             <div id="logoTextforHeader">HEADER</div>
