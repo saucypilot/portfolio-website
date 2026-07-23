@@ -69,6 +69,24 @@
   text-transform: uppercase;
 }
 
+.aboutLeadMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.aboutLeadMeta a {
+  display: inline-block;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .storySection {
   padding-top: clamp(6rem, 12vw, 12rem);
 }
@@ -125,6 +143,105 @@
   padding: clamp(2rem, 5vw, 5rem) 0;
   border-top: 1px solid var(--ink);
   border-bottom: 1px solid var(--ink);
+}
+
+.experienceSection {
+  padding-top: clamp(6rem, 12vw, 12rem);
+}
+
+.experienceIntro {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: clamp(2rem, 8vw, 9rem);
+  align-items: end;
+  padding: clamp(3rem, 7vw, 7rem) 0;
+}
+
+.experienceIntro h2 {
+  max-width: 13ch;
+  margin: 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(2.75rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.experienceIntro p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.experienceList {
+  border-top: 1px solid var(--ink);
+}
+
+.experienceRow {
+  display: grid;
+  grid-template-columns: 0.15fr 0.8fr 1.1fr 0.5fr;
+  gap: clamp(1rem, 3vw, 4rem);
+  padding: clamp(1.75rem, 3vw, 3rem) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.experienceRow > * {
+  min-width: 0;
+}
+
+.experienceNumber {
+  color: var(--signal);
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1;
+}
+
+.experienceRole h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.75rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.experienceRole p,
+.experienceSummary p,
+.experienceTime {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.experienceRole p,
+.experienceTime {
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.experienceSummary p {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.experienceSummary span {
+  display: block;
+  margin-top: 1.25rem;
+  color: var(--ink);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.experienceTime {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: right;
 }
 
 .aboutStatement span {
@@ -191,8 +308,13 @@
   }
 
   .aboutLead,
-  .interestsIntro {
+  .interestsIntro,
+  .experienceIntro {
     grid-template-columns: 1fr;
+  }
+
+  .aboutLeadMeta {
+    align-items: flex-start;
   }
 
   .storyChapter {
@@ -202,6 +324,16 @@
   .storyChapter > div {
     grid-column: 2;
   }
+
+  .experienceRow {
+    grid-template-columns: 0.15fr 0.85fr;
+  }
+
+  .experienceSummary,
+  .experienceTime {
+    grid-column: 2;
+    text-align: left;
+  }
 }
 
 @media (max-width: 520px) {
@@ -210,6 +342,15 @@
   }
 
   .storyChapter > div {
+    grid-column: 1;
+  }
+
+  .experienceRow {
+    grid-template-columns: 1fr;
+  }
+
+  .experienceSummary,
+  .experienceTime {
     grid-column: 1;
   }
 }

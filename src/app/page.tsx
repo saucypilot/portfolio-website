@@ -28,7 +28,7 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="heroEyebrow">
           <span className="availability"><i aria-hidden="true" /> Available for select projects</span>
-          <span>Arlington, Texas / 2026</span>
+          <span>Creative systems / 2026</span>
         </div>
 
         <div className="heroComposition">
@@ -42,7 +42,7 @@ export default function Home() {
             <div className="portraitImage">
               <Image
                 src="/headshot.png"
-                alt="Portrait of Irian Duran"
+                alt="Portrait of Irian Durian"
                 width={500}
                 height={500}
                 priority
@@ -50,7 +50,7 @@ export default function Home() {
             </div>
             <figcaption>
               <span>Portrait_001</span>
-              <span>IRN / TX</span>
+              <span>IRN / 001</span>
             </figcaption>
           </figure>
         </div>

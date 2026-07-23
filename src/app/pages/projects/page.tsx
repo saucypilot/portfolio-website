@@ -5,7 +5,7 @@ import ProjectVideo from "./ProjectVideo";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Interactive software, simulations, graphics, and web projects by Irian Duran.",
+  description: "Interactive software, simulations, graphics, and web projects by Irian Durian.",
 };
 
 type Project = {
@@ -114,7 +114,7 @@ const projects: Project[] = [
     index: "08",
     title: "Xquisite Dance",
     description:
-      "A focused marketing site for an Arlington dance studio, giving families a clear path to explore programs and connect with the team.",
+      "A focused marketing site for a dance studio, giving families a clear path to explore programs and connect with the team.",
     type: "Client Website",
     stack: "React / Next.js",
     year: "2024",

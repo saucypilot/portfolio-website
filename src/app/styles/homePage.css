@@ -52,21 +52,24 @@
   position: relative;
   flex: 1;
   min-height: 540px;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(240px, 24vw, 390px);
+  gap: clamp(2rem, 4vw, 5rem);
   align-items: center;
   padding: clamp(2rem, 5vh, 4rem) 0;
 }
 
 .heroTitle {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  min-width: 0;
   width: 100%;
   margin: 0;
   font-family: var(--font-archivo-black), sans-serif;
-  font-size: clamp(4rem, 11.5vw, 11.5rem);
+  font-size: clamp(4rem, 8vw, 9.5rem);
   font-weight: 400;
-  line-height: 0.78;
-  letter-spacing: -0.075em;
+  line-height: 0.82;
+  letter-spacing: -0.065em;
   text-transform: uppercase;
 }
 
@@ -76,7 +79,7 @@
 }
 
 .heroTitle span:nth-child(2) {
-  margin-left: 8vw;
+  margin-left: clamp(0rem, 2vw, 2.5rem);
   animation-delay: 90ms;
 }
 
@@ -85,11 +88,11 @@
 }
 
 .portrait {
-  position: absolute;
-  right: clamp(0rem, 4vw, 4rem);
-  bottom: 5%;
-  z-index: 1;
-  width: clamp(210px, 25vw, 390px);
+  position: relative;
+  z-index: 0;
+  justify-self: end;
+  width: 100%;
+  min-width: 0;
   margin: 0;
 }
 
@@ -308,18 +311,19 @@
 
 @media (max-width: 900px) {
   .heroComposition {
-    min-height: 610px;
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
     align-items: flex-start;
     padding-top: 4rem;
   }
 
   .heroTitle {
-    font-size: clamp(3.5rem, 14vw, 8rem);
+    font-size: clamp(3.5rem, 13vw, 7.5rem);
   }
 
   .portrait {
-    right: 0;
-    bottom: 2rem;
+    justify-self: end;
     width: clamp(190px, 38vw, 320px);
   }
 
@@ -342,7 +346,7 @@
   }
 
   .heroComposition {
-    min-height: 500px;
+    min-height: auto;
     padding-top: 3rem;
   }
 
@@ -356,8 +360,7 @@
   }
 
   .portrait {
-    width: min(52vw, 230px);
-    bottom: 1.5rem;
+    width: min(72vw, 280px);
   }
 
   .artifactHeading h2,

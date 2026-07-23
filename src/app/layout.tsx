@@ -21,23 +21,23 @@ const productionUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(productionUrl),
   title: {
-    default: "Irian Duran — Software Engineer",
-    template: "%s — Irian Duran",
+    default: "Irian Durian — Software Engineer",
+    template: "%s — Irian Durian",
   },
   description:
-    "Creative software engineer building interactive web experiences, graphics, simulations, and game systems in Arlington, Texas.",
+    "Creative software engineer building interactive web experiences, graphics, simulations, and game systems.",
   openGraph: {
     type: "website",
-    title: "Irian Duran — Software Engineer",
+    title: "Irian Durian — Software Engineer",
     description:
-      "Creative development, graphics, simulations, and game systems from Arlington, Texas.",
+      "Creative development, graphics, simulations, and game systems.",
     images: [{ url: "/og.png", width: 1733, height: 907, alt: "Irian Software Engineer" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Irian Duran — Software Engineer",
+    title: "Irian Durian — Software Engineer",
     description:
-      "Creative development, graphics, simulations, and game systems from Arlington, Texas.",
+      "Creative development, graphics, simulations, and game systems.",
     images: ["/og.png"],
   },
 };
@@ -63,7 +63,7 @@ export default function RootLayout({
           </a>
 
           <header className="siteHeader">
-            <Link className="wordmark" href="/" aria-label="Irian Duran, home">
+            <Link className="wordmark" href="/" aria-label="Irian Durian, home">
               IRIAN<sup>®</sup>
             </Link>
 
@@ -87,10 +87,13 @@ export default function RootLayout({
           <footer className="siteFooter">
             <div className="footerMeta">
               <span>© {new Date().getFullYear()} IRIAN DURAN</span>
-              <span>DESIGNED + BUILT IN TEXAS</span>
+              <span>DESIGNED + BUILT INDEPENDENTLY</span>
             </div>
 
-            <nav className="footerLinks" aria-label="Social links">
+            <nav className="footerLinks" aria-label="Portfolio links">
+              <a href="/Irian-Durian-Resume.pdf" target="_blank" rel="noreferrer">
+                Resume ↗
+              </a>
               <a href="https://github.com/saucypilot" target="_blank" rel="noreferrer">
                 GitHub ↗
               </a>
