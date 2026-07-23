@@ -38,8 +38,8 @@ export default function Home() {
             <span>Engineer.</span>
           </h1>
 
-          <figure className="portrait">
-            <div className="portraitImage">
+          <figure className="portrait" data-reveal="media">
+            <div className="portraitImage" data-tilt>
               <Image
                 src="/headshot.png"
                 alt="Portrait of Irian Durian"
@@ -63,7 +63,7 @@ export default function Home() {
 
       <section id="interactive-space" className="artifactSection" aria-labelledby="artifact-title">
         <SectionLabel index="01.01" title="Interactive workspace" detail="WebGL / Three.js" />
-        <div className="artifactHeading">
+        <div className="artifactHeading" data-reveal>
           <h2 id="artifact-title">A digital artifact, not a background.</h2>
           <p>
             An interactive room built in real time. Drag to rotate, scroll to zoom,
@@ -71,7 +71,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="roomFrame">
+        <div className="roomFrame" data-reveal="media">
           <div className="frameLabel frameLabelTop">Artifact / 001</div>
           <Room />
           <div className="frameLabel frameLabelBottom">
@@ -83,7 +83,7 @@ export default function Home() {
 
       <section className="profileSection" aria-labelledby="profile-title">
         <SectionLabel index="01.02" title="Profile" detail="Art × Engineering" />
-        <div className="profileGrid">
+        <div className="profileGrid" data-reveal>
           <h2 id="profile-title">I build software where engineering meets interaction.</h2>
           <div className="profileCopy">
             <p>
@@ -99,7 +99,7 @@ export default function Home() {
 
       <section className="contactSection" aria-labelledby="contact-title">
         <SectionLabel index="01.03" title="Contact" detail="Open to collaboration" />
-        <div className="contactGrid">
+        <div className="contactGrid" data-reveal>
           <h2 id="contact-title">Let’s make something worth exploring.</h2>
           <a
             className="contactAction"

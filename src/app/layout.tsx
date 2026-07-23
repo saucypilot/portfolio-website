@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { JetBrains_Mono } from "next/font/google";
 import ThemeToggle from "./components/themeToggle";
+import MotionSystem from "./components/MotionSystem";
 import Providers from "./provider";
 import "./globals.css";
 
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={jetBrainsMono.variable}>
         <Providers>
+          <MotionSystem />
           <a className="skipLink" href="#main-content">
             Skip to content
           </a>

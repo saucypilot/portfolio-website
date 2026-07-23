@@ -58,7 +58,7 @@ export default function SkillsPage() {
 
       <section className="capabilityList" aria-label="Core capabilities">
         {capabilities.map((capability) => (
-          <article className="capabilityRow" key={capability.title}>
+          <article className="capabilityRow" key={capability.title} data-reveal>
             <span>{capability.index}</span>
             <h2>{capability.title}</h2>
             <div>
@@ -70,7 +70,7 @@ export default function SkillsPage() {
         ))}
       </section>
 
-      <section className="workingSet" aria-labelledby="working-set-title">
+      <section className="workingSet" aria-labelledby="working-set-title" data-reveal>
         <div>
           <span>04.05 / Extended set</span>
           <h2 id="working-set-title">Extended working set</h2>
@@ -85,7 +85,7 @@ export default function SkillsPage() {
         </dl>
       </section>
 
-      <section className="skillsCta">
+      <section className="skillsCta" data-reveal>
         <p>See how these capabilities turn into finished work.</p>
         <Link href="/pages/projects">Explore selected projects <span>↗</span></Link>
       </section>

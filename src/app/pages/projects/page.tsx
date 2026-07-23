@@ -145,7 +145,7 @@ export default function ProjectsPage() {
 
       <section className="projectIndex" aria-label="Project archive">
         {projects.map((project) => (
-          <article className="archiveProject" key={project.title}>
+          <article className="archiveProject" key={project.title} data-reveal>
             <div className="archiveProjectMeta">
               <span className="projectNumber">{project.index}</span>
               <div>
@@ -168,6 +168,7 @@ export default function ProjectsPage() {
               target="_blank"
               rel="noreferrer"
               aria-label={`Open ${project.title}`}
+              data-tilt
             >
               {project.mediaType === "video" ? (
                 <ProjectVideo

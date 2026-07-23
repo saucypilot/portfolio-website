@@ -69,7 +69,7 @@ export default function AboutPage() {
       </header>
 
       <section className="storySection" aria-label="My story">
-        <article className="storyChapter">
+        <article className="storyChapter" data-reveal>
           <span className="storyNumber">03.01</span>
           <h2>Before the code</h2>
           <div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
           </div>
         </article>
 
-        <article className="storyChapter">
+        <article className="storyChapter" data-reveal>
           <span className="storyNumber">03.02</span>
           <h2>Finding software</h2>
           <div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
           </div>
         </article>
 
-        <article className="storyChapter">
+        <article className="storyChapter" data-reveal>
           <span className="storyNumber">03.03</span>
           <h2>What I do now</h2>
           <div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
           <span><b>03.04</b> / Experience</span>
           <span>2023—Present</span>
         </div>
-        <div className="experienceIntro">
+        <div className="experienceIntro" data-reveal>
           <h2 id="experience-title">Building, teaching, and enabling teams.</h2>
           <p>
             A mix of engineering, community leadership, and hands-on education informs
@@ -126,7 +126,7 @@ export default function AboutPage() {
         </div>
         <div className="experienceList">
           {experience.map((item, index) => (
-            <article className="experienceRow" key={`${item.organization}-${item.role}`}>
+            <article className="experienceRow" key={`${item.organization}-${item.role}`} data-reveal>
               <span className="experienceNumber">{String(index + 1).padStart(2, "0")}</span>
               <div className="experienceRole">
                 <h3>{item.role}</h3>
@@ -144,7 +144,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <blockquote className="aboutStatement">
+      <blockquote className="aboutStatement" data-reveal>
         <span>Working principle / 001</span>
         <p>“Make it useful. Make it clear. Then give it a point of view.”</p>
       </blockquote>
@@ -154,7 +154,7 @@ export default function AboutPage() {
           <span><b>03.05</b> / Outside the screen</span>
           <span>Interactive index</span>
         </div>
-        <div className="interestsIntro">
+        <div className="interestsIntro" data-reveal>
           <h2 id="interests-title">Other things that keep me curious.</h2>
           <p>Use the controls or arrow keys to move through the collection.</p>
         </div>
