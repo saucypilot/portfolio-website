@@ -68,8 +68,11 @@
 }
 
 .capabilityRow > span {
+  position: sticky;
+  top: calc(var(--header-height) + 3.25rem);
+  align-self: start;
   font-family: var(--font-archivo-black), sans-serif;
-  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-size: clamp(2rem, 3.25vw, 3.5rem);
   line-height: 1;
 }
 
@@ -205,6 +208,10 @@
 
   .capabilityRow {
     grid-template-columns: 0.2fr 0.8fr;
+  }
+
+  .capabilityRow > span {
+    position: static;
   }
 
   .capabilityRow > div {

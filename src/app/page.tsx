@@ -13,7 +13,7 @@ function SectionLabel({
   detail: string;
 }) {
   return (
-    <div className="sectionLabel">
+    <div className="sectionLabel chapterLabel">
       <span>
         <b>{index}</b> / {title}
       </span>
@@ -28,7 +28,7 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="heroEyebrow">
           <span className="availability"><i aria-hidden="true" /> Available for select projects</span>
-          <span>Creative systems / 2026</span>
+          <span><b className="heroIndex">01.00</b> / Home / 2026</span>
         </div>
 
         <div className="heroComposition">
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
 
       <section id="interactive-space" className="artifactSection" aria-labelledby="artifact-title">
-        <SectionLabel index="01" title="Interactive workspace" detail="WebGL / Three.js" />
+        <SectionLabel index="01.01" title="Interactive workspace" detail="WebGL / Three.js" />
         <div className="artifactHeading">
           <h2 id="artifact-title">A digital artifact, not a background.</h2>
           <p>
@@ -82,7 +82,7 @@ export default function Home() {
       </section>
 
       <section className="profileSection" aria-labelledby="profile-title">
-        <SectionLabel index="02" title="Profile" detail="Art × Engineering" />
+        <SectionLabel index="01.02" title="Profile" detail="Art × Engineering" />
         <div className="profileGrid">
           <h2 id="profile-title">I build software where engineering meets interaction.</h2>
           <div className="profileCopy">
@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       <section className="contactSection" aria-labelledby="contact-title">
-        <SectionLabel index="03" title="Contact" detail="Open to collaboration" />
+        <SectionLabel index="01.03" title="Contact" detail="Open to collaboration" />
         <div className="contactGrid">
           <h2 id="contact-title">Let’s make something worth exploring.</h2>
           <a

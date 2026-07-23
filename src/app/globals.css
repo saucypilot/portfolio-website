@@ -87,6 +87,14 @@ a:focus-visible {
   transform: translateY(0);
 }
 
+.chapterLabel {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 100;
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(14px) saturate(120%);
+}
+
 .siteHeader {
   position: fixed;
   inset: 0 0 auto;

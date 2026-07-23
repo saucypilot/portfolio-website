@@ -24,7 +24,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    index: "01",
+    index: "02.01",
     title: "Fluid Simulation",
     description:
       "A GPU-accelerated fluid dynamics experiment with real-time advection, pressure solving, vorticity, and multi-touch dye interaction.",
@@ -36,7 +36,7 @@ const projects: Project[] = [
     href: "https://github.com/saucypilot/webGL-Fluid-Simulation",
   },
   {
-    index: "02",
+    index: "02.02",
     title: "Drowsiness Detector",
     description:
       "A real-time safety system that analyzes facial landmarks, eye aspect ratio, and head pose to recognize signs of fatigue.",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     href: "https://github.com/saucypilot/Drowsiness-detector",
   },
   {
-    index: "03",
+    index: "02.03",
     title: "Solar System",
     description:
       "An explorable 3D solar system with orbiting planets, moons, an asteroid belt, and procedural shooting stars.",
@@ -61,7 +61,7 @@ const projects: Project[] = [
     href: "https://github.com/saucypilot/Solar-system-simulator",
   },
   {
-    index: "04",
+    index: "02.04",
     title: "HackUTA 2024",
     description:
       "The official digital home for a 24-hour university hackathon, designed to make schedules, onboarding, and event details easy to navigate.",
@@ -74,7 +74,7 @@ const projects: Project[] = [
     linkLabel: "Live site",
   },
   {
-    index: "05",
+    index: "02.05",
     title: "Sand Simulator",
     description:
       "A real-time granular physics playground combining falling sand, gravity-driven circles, damping, and collision response.",
@@ -86,7 +86,7 @@ const projects: Project[] = [
     href: "https://github.com/saucypilot/Sand-simulator",
   },
   {
-    index: "06",
+    index: "02.06",
     title: "Triv.io",
     description:
       "A collaborative study platform that turns uploaded notes into live multiplayer quizzes with AI-generated questions and leaderboards.",
@@ -98,7 +98,7 @@ const projects: Project[] = [
     href: "https://github.com/Ashishrupani/Triv.io",
   },
   {
-    index: "07",
+    index: "02.07",
     title: "Cube Game",
     description:
       "A browser-based 3D game exploring movement, jumping, gravity, collision detection, and progressively incoming obstacles.",
@@ -111,7 +111,7 @@ const projects: Project[] = [
     href: "https://github.com/saucypilot/threejs-cube-game",
   },
   {
-    index: "08",
+    index: "02.08",
     title: "Xquisite Dance",
     description:
       "A focused marketing site for a dance studio, giving families a clear path to explore programs and connect with the team.",
@@ -129,8 +129,8 @@ export default function ProjectsPage() {
   return (
     <main id="main-content" className="projectsPage">
       <header className="archiveHero">
-        <div className="archiveKicker">
-          <span><b>02</b> / Project archive</span>
+        <div className="archiveKicker chapterLabel">
+          <span><b>02.00</b> / Project archive</span>
           <span>2024—2026</span>
         </div>
         <h1>Selected<br />Projects.</h1>

@@ -113,10 +113,13 @@
 }
 
 .projectNumber {
+  position: sticky;
+  top: calc(var(--header-height) + 3.25rem);
+  align-self: flex-start;
   margin-bottom: auto;
   color: var(--signal);
   font-family: var(--font-archivo-black), sans-serif;
-  font-size: clamp(3rem, 6vw, 6rem);
+  font-size: clamp(2rem, 3.25vw, 3.5rem);
   line-height: 1;
   letter-spacing: -0.06em;
 }
@@ -234,6 +237,7 @@
   }
 
   .projectNumber {
+    position: static;
     grid-column: 1 / -1;
     margin: 0 0 1rem;
   }

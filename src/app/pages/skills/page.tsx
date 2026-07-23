@@ -9,25 +9,25 @@ export const metadata: Metadata = {
 
 const capabilities = [
   {
-    index: "01",
+    index: "04.01",
     title: "Creative Development",
     description: "Expressive, responsive interfaces where typography, motion, and interaction work as one system.",
     tools: "TypeScript / React / Next.js / Three.js / Framer Motion",
   },
   {
-    index: "02",
+    index: "04.02",
     title: "Graphics + Simulation",
     description: "Real-time visual systems, physical experiments, procedural scenes, and performance-minded rendering.",
     tools: "C++ / WebGL / OpenGL / SDL2 / GLSL / Blender",
   },
   {
-    index: "03",
+    index: "04.03",
     title: "Games + Interactive Systems",
     description: "Playful mechanics and teaching tools designed around clear feedback, feel, and exploration.",
     tools: "Unity / C# / Lua / Roblox Studio / MCreator",
   },
   {
-    index: "04",
+    index: "04.04",
     title: "Computer Vision + AI",
     description: "Practical experiments using visual analysis and machine learning to interpret real-world inputs.",
     tools: "Python / OpenCV / MediaPipe / Gemini API",
@@ -45,8 +45,8 @@ export default function SkillsPage() {
   return (
     <main id="main-content" className="skillsPage">
       <header className="skillsHero">
-        <div className="skillsLabel">
-          <span><b>03</b> / Capabilities</span>
+        <div className="skillsLabel chapterLabel">
+          <span><b>04.00</b> / Capabilities</span>
           <span>Tools follow ideas</span>
         </div>
         <h1>What I<br />Build With.</h1>
@@ -72,7 +72,7 @@ export default function SkillsPage() {
 
       <section className="workingSet" aria-labelledby="working-set-title">
         <div>
-          <span>Index / 001</span>
+          <span>04.05 / Extended set</span>
           <h2 id="working-set-title">Extended working set</h2>
         </div>
         <dl>

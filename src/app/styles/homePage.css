@@ -48,6 +48,10 @@
   animation: statusPulse 2s ease-in-out infinite;
 }
 
+.heroIndex {
+  color: var(--signal);
+}
+
 .heroComposition {
   position: relative;
   flex: 1;

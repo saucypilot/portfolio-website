@@ -48,8 +48,8 @@ export default function AboutPage() {
   return (
     <main id="main-content" className="aboutPage">
       <header className="aboutHero">
-        <div className="aboutLabel">
-          <span><b>03</b> / Profile</span>
+        <div className="aboutLabel chapterLabel">
+          <span><b>03.00</b> / Profile</span>
           <span>Art × Engineering</span>
         </div>
         <h1>Art.<br />Code.<br />Curiosity.</h1>
@@ -70,7 +70,7 @@ export default function AboutPage() {
 
       <section className="storySection" aria-label="My story">
         <article className="storyChapter">
-          <span className="storyNumber">01</span>
+          <span className="storyNumber">03.01</span>
           <h2>Before the code</h2>
           <div>
             <p>
@@ -84,7 +84,7 @@ export default function AboutPage() {
         </article>
 
         <article className="storyChapter">
-          <span className="storyNumber">02</span>
+          <span className="storyNumber">03.02</span>
           <h2>Finding software</h2>
           <div>
             <p>
@@ -98,7 +98,7 @@ export default function AboutPage() {
         </article>
 
         <article className="storyChapter">
-          <span className="storyNumber">03</span>
+          <span className="storyNumber">03.03</span>
           <h2>What I do now</h2>
           <div>
             <p>
@@ -113,8 +113,8 @@ export default function AboutPage() {
       </section>
 
       <section className="experienceSection" aria-labelledby="experience-title">
-        <div className="aboutLabel">
-          <span><b>04</b> / Experience</span>
+        <div className="aboutLabel chapterLabel">
+          <span><b>03.04</b> / Experience</span>
           <span>2023—Present</span>
         </div>
         <div className="experienceIntro">
@@ -127,7 +127,7 @@ export default function AboutPage() {
         <div className="experienceList">
           {experience.map((item, index) => (
             <article className="experienceRow" key={`${item.organization}-${item.role}`}>
-              <span className="experienceNumber">0{index + 1}</span>
+              <span className="experienceNumber">{String(index + 1).padStart(2, "0")}</span>
               <div className="experienceRole">
                 <h3>{item.role}</h3>
                 <p>{item.organization}</p>
@@ -150,8 +150,8 @@ export default function AboutPage() {
       </blockquote>
 
       <section className="interestsSection" aria-labelledby="interests-title">
-        <div className="aboutLabel">
-          <span><b>05</b> / Outside the screen</span>
+        <div className="aboutLabel chapterLabel">
+          <span><b>03.05</b> / Outside the screen</span>
           <span>Interactive index</span>
         </div>
         <div className="interestsIntro">
