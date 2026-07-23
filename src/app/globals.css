@@ -1,313 +1,273 @@
 @import "tailwindcss";
 
-/* ========================================================================== 
-   1) Theme variables
-   -------------------------------------------------------------------------- */
 :root {
-  --background: #e7e7d6;
-  --foreground: #1e1e1d;
-
-  /* Toggle sizing variables — change once, affects both controls */
-  --toggle-w: 5rem;
-  --toggle-h: 2rem;
-  --toggle-padding-x: 0.5rem;
-  --toggle-gap: 0.5rem;
+  --paper: #e7e7d6;
+  --ink: #1e1e1d;
+  --signal: #f86d00;
+  --muted: #6f7068;
+  --rule: rgb(30 30 29 / 20%);
+  --header-height: 72px;
+  --page-gutter: clamp(1rem, 3vw, 2.5rem);
+  --max-width: 1600px;
+  --font-archivo-black: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
 }
 
 :root.dark {
-  --background: #1e1e1d;
-  --foreground: #e7e7d6;
+  --paper: #1e1e1d;
+  --ink: #e7e7d6;
+  --muted: #aaa99c;
+  --rule: rgb(231 231 214 / 22%);
+  color-scheme: dark;
 }
 
-/* Inline theme mapping used by tooling / components */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-jetbrains-mono);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-/* ========================================================================== 
-   2) Base layout
-   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+}
+
 body {
   margin: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-jetbrains-mono), monospace;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
 }
 
-/* ========================================================================== 
-   3) Header & footer
-   -------------------------------------------------------------------------- */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background-color: transparent;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  box-sizing: border-box;
-}
-
-footer {
-  position: static;
-  width: 100%;
-  background-color: transparent;
-  text-align: center;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(10px);
-  box-sizing: border-box;
-  margin-top: auto;
-}
-
-nav {
-  min-width: 0;
-}
-
-#footerLinks {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: clamp(1.5rem, 6vw, 6rem);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
-}
-
-#footerLinks a {
-  text-decoration: none;
+a {
   color: inherit;
 }
 
-/* ========================================================================== 
-   4) Theme toggle component (compact, accessible structure)
-   -------------------------------------------------------------------------- */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-/* ensure the browser color-scheme is set via CSS (prevents SSR/CSR mismatch) */
-html { color-scheme: light; }
-html.dark { color-scheme: dark; }
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 4px;
+}
 
-/* Toggle container */
-#themeToggle {
-  background-color: #f86d00;
-  border-radius: 0;
-  height: var(--toggle-h);
+::selection {
+  background: var(--signal);
+  color: #11110f;
+}
+
+.skipLink {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+  padding: 0.75rem 1rem;
+  background: var(--signal);
+  color: #11110f;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: translateY(-150%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.siteHeader {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+  min-height: var(--header-height);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 var(--page-gutter);
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(14px) saturate(120%);
+}
+
+.wordmark {
+  width: max-content;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: 1.15rem;
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+}
+
+.wordmark sup {
+  margin-left: 0.1rem;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.45em;
+  vertical-align: top;
+}
+
+.siteNav ol {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--toggle-gap);
-  padding: 0 var(--toggle-padding-x);
-  font-size: 1rem;
-  cursor: pointer;
-  width: var(--toggle-w);
-  box-sizing: border-box;
-}
-
-/* Toggle knob (keeps a fixed size) */
-#themeToggle .tt-knob {
-  width: 1.25rem;
-  height: 1.25rem;
-  background: var(--foreground);
-  border-radius: 0;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08) inset;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-  flex: 0 0 auto;
-}
-
-/* Press feedback */
-#themeToggle:active .tt-knob {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12) inset;
-}
-
-/* Small, non-wrapping labels */
-#themeToggle .tt-label {
-  font-size: 0.75rem;
-  line-height: 1;
-  user-select: none;
-  white-space: nowrap;
-}
-
-/* Layout helpers */
-#themeToggle .tt-left {
-  order: 0;
-}
-#themeToggle .tt-right {
-  order: 2;
-}
-
-/* Hide controls until JS mounts to avoid flash of wrong state */
-#themeToggle[data-mounted="false"] .tt-knob,
-#themeToggle[data-mounted="false"] .tt-label {
-  visibility: hidden;
-}
-
-/* ========================================================================== 
-   5) Footer links popover (trigger + popover styling)
-   -------------------------------------------------------------------------- */
-.footer-right,
-.footer-links-popover {
-  position: relative;
-  display: inline-block;
-}
-
-.links-trigger {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--toggle-w);
-  height: var(--toggle-h);
-  padding: 0;
-  color: #f86d00;
-  border: 1px solid #f86d00;
-  background: transparent;
-  cursor: pointer;
-  border-radius: 0;
-  box-sizing: border-box;
-}
-
-/* Popover container (animates when opened) */
-.links-popover {
-  position: absolute;
-  right: 0;
-  bottom: 100%;
-  margin-bottom: 0.5rem;
-  z-index: 50;
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(6px) scale(0.98);
-  transform-origin: bottom right;
-  transition: opacity 120ms ease, transform 120ms ease;
-}
-
-.links-popover.open {
-  pointer-events: auto;
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Popover panel */
-.links-popover-inner {
-  border: 1px solid #f86d00;
-  background: var(--background);
-  color: #f86d00;
-  padding: 0.75rem;
-  min-width: 14rem;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
-  backdrop-filter: saturate(120%) blur(4px);
-}
-
-.links-popover-inner ul {
-  list-style: none;
+  gap: clamp(1rem, 4vw, 4.5rem);
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 0.35rem;
+  list-style: none;
 }
 
-.links-popover-inner a {
+.siteNav a,
+.footerLinks a {
+  position: relative;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
   text-decoration: none;
-  display: block;
-  padding: 0.25rem 0.25rem;
-  border-radius: 0.375rem;
+  text-transform: uppercase;
 }
 
-.links-popover-inner a:hover,
-.links-popover-inner a:focus {
-  text-decoration: underline;
-}
-
-/* Popover caret/arrow */
-.links-popover-caret {
+.siteNav a::after,
+.footerLinks a::after {
+  content: "";
   position: absolute;
-  right: 0.75rem;
-  bottom: -6px;
-  width: 10px;
-  height: 10px;
-  background: var(--background);
-  border-left: 1px solid var(--foreground);
-  border-bottom: 1px solid var(--foreground);
-  transform: rotate(45deg);
+  right: 0;
+  bottom: -0.35rem;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 180ms ease;
 }
 
-/* ========================================================================== 
-   6) Accessibility: respect reduced motion
-   -------------------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  .links-popover,
-  .links-popover.open {
-    transition: none;
-    transform: none;
-  }
+.siteNav a:hover::after,
+.siteNav a:focus-visible::after,
+.footerLinks a:hover::after,
+.footerLinks a:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
-@media (max-width: 768px) {
+.siteNav a span {
+  color: var(--signal);
+}
+
+.themeToggle {
+  justify-self: end;
+  display: inline-grid;
+  grid-template-columns: auto auto 0.55rem;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.themeToggleValue {
+  color: var(--muted);
+}
+
+.themeToggleMark {
+  width: 0.55rem;
+  aspect-ratio: 1;
+  background: var(--signal);
+}
+
+.themeToggle[data-mounted="false"] {
+  cursor: wait;
+}
+
+.siteFooter {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem var(--page-gutter) 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.footerMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+}
+
+.footerMeta span:last-child {
+  color: var(--muted);
+}
+
+.footerLinks {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1rem, 3vw, 3rem);
+}
+
+@media (max-width: 760px) {
   :root {
-    --toggle-w: 4.5rem;
-    --toggle-h: 1.9rem;
-    --toggle-padding-x: 0.4rem;
-    --toggle-gap: 0.35rem;
+    --header-height: 112px;
   }
 
-  header {
-    padding: 0.75rem 1rem;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    align-items: center;
+  .siteHeader {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 56px 55px;
+    gap: 0 1rem;
   }
 
-  nav {
-    order: 3;
-    width: 100%;
+  .siteNav {
+    grid-column: 1 / -1;
+    grid-row: 2;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid var(--rule);
   }
 
-  #footerLinks {
-    width: max-content;
-    min-width: 100%;
+  .siteNav ol {
+    min-width: max-content;
     justify-content: space-between;
-    gap: 1.25rem;
-    font-size: 0.95rem;
-    padding-bottom: 0.2rem;
+    gap: 1.5rem;
+    padding: 1rem 0;
   }
 
-  footer {
-    position: static;
-    margin-top: auto;
-    padding: 1rem;
-    gap: 0.75rem;
+  .siteFooter {
+    flex-direction: column;
+  }
+
+  .footerLinks {
     flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  #logoTextForFooter {
-    order: 3;
-    width: 100%;
-  }
-
-  .links-popover {
-    right: auto;
-    left: 0;
-    transform-origin: bottom left;
-  }
-
-  .links-popover-caret {
-    right: auto;
-    left: 0.75rem;
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

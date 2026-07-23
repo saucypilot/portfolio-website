@@ -1,30 +1,237 @@
-main {
-  padding-top: 96px;
-  padding-bottom: 96px;
+.skillsPage {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: calc(var(--header-height) + 2rem) var(--page-gutter) clamp(6rem, 10vw, 10rem);
 }
 
-.skillSections {
-  margin: 20px;
-}
-
-/* Keep your grid nicely wrapped and centered */
-.imagesWrapper {
+.skillsHero {
+  min-height: calc(100svh - var(--header-height) - 2rem);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.skillsLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.skillsLabel b,
+.capabilityRow > span,
+.workingSet > div > span {
+  color: var(--signal);
+}
+
+.skillsLabel span:last-child {
+  color: var(--muted);
+}
+
+.skillsHero h1 {
+  flex: 1;
+  display: flex;
   align-items: center;
-  gap: 20px;
+  margin: clamp(2rem, 5vw, 5rem) 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(4.5rem, 13vw, 13rem);
+  font-weight: 400;
+  line-height: 0.76;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
 }
 
-/* Make every logo square in the layout but preserve the real aspect ratio */
-.logo {
-  width: 100px;
-  height: 100px;
-  object-fit: contain; /* prevents squish */
+.skillsHero > p {
+  max-width: 62ch;
+  margin: 0 0 0 auto;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  line-height: 1.7;
 }
 
-#languagesSection,
-#frameworksSection,
-#toolsSection {
-  scroll-margin-top: 96px;
+.capabilityList {
+  padding-top: clamp(6rem, 12vw, 12rem);
+}
+
+.capabilityRow {
+  display: grid;
+  grid-template-columns: 0.15fr 0.75fr 1.1fr;
+  gap: clamp(1.5rem, 5vw, 6rem);
+  padding: clamp(2rem, 4vw, 4rem) 0;
+  border-top: 1px solid var(--ink);
+}
+
+.capabilityRow > span {
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1;
+}
+
+.capabilityRow h2 {
+  max-width: 13ch;
+  margin: 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(2rem, 4vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.capabilityRow > div {
+  align-self: end;
+}
+
+.capabilityRow p {
+  max-width: 62ch;
+  margin: 0 0 2rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.capabilityRow small {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.capabilityRow .capabilityTools {
+  margin: 0;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.workingSet {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: clamp(2rem, 8vw, 10rem);
+  margin-top: clamp(6rem, 12vw, 12rem);
+  padding: clamp(2rem, 5vw, 5rem) 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.workingSet > div > span {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.workingSet h2 {
+  max-width: 9ch;
+  margin: 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.workingSet dl {
+  margin: 0;
+}
+
+.workingSet dl > div {
+  display: grid;
+  grid-template-columns: 0.45fr 1fr;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.7rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.workingSet dt {
+  color: var(--muted);
+}
+
+.workingSet dd {
+  margin: 0;
+}
+
+.skillsCta {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-end;
+  padding-top: clamp(4rem, 8vw, 8rem);
+}
+
+.skillsCta p {
+  max-width: 40ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.skillsCta a {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  min-width: min(100%, 320px);
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.skillsCta a span {
+  color: var(--signal);
+}
+
+@media (max-width: 760px) {
+  .skillsHero h1 {
+    font-size: clamp(3.9rem, 19vw, 7rem);
+  }
+
+  .capabilityRow {
+    grid-template-columns: 0.2fr 0.8fr;
+  }
+
+  .capabilityRow > div {
+    grid-column: 2;
+  }
+
+  .workingSet {
+    grid-template-columns: 1fr;
+  }
+
+  .skillsCta {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .capabilityRow {
+    grid-template-columns: 1fr;
+  }
+
+  .capabilityRow > div {
+    grid-column: 1;
+  }
+
+  .workingSet dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
 }

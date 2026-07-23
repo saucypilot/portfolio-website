@@ -1,139 +1,473 @@
-#landingPage {
-    width: 100%;
-    overflow-x: hidden;
+.homePage {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: var(--header-height) var(--page-gutter) 0;
 }
 
-#firstSection {
-    width: 100%;
-    min-height: 100svh;
-    display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr);
-    align-items: center;
-    gap: clamp(2rem, 5vw, 5rem);
-    padding: clamp(6rem, 10vw, 8rem) clamp(1.25rem, 4vw, 3rem) 4rem;
-    box-sizing: border-box;
+.hero {
+  min-height: calc(100svh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 4vh, 3rem) 0 1.25rem;
 }
 
-#firstHeading{
-    font-size: clamp(2.25rem, 2.6vw, 3.2rem);
-    line-height: 1.05;
-    display: inline-block;
-    max-width: min(100%, 43ch);
+.heroEyebrow,
+.heroFooter,
+.sectionLabel,
+.lookbookMeta,
+.frameLabel {
+  font-size: 0.65rem;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-#firstHeading .typewriter{
-    display: inline-block;
-    overflow: visible;
-    white-space: normal;
-    max-width: 100%;
-    overflow-wrap: break-word;
+.heroEyebrow,
+.heroFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.typewriterCursor {
-    display: inline-block;
-    width: 2px;
-    height: 0.9em;
-    margin-left: 0.04em;
-    background: currentColor;
-    vertical-align: -0.08em;
-    animation: blinkingCursor 500ms step-end infinite;
+.heroEyebrow {
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--rule);
 }
 
-.heroHeadshot {
-    width: min(100%, 500px);
-    height: auto;
-    justify-self: end;
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-@keyframes blinkingCursor{
-    from { opacity: 1; }
-    to { opacity: 0; }
+.availability i {
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--signal);
+  animation: statusPulse 2s ease-in-out infinite;
 }
 
-#secondSection {
-    width: 100%;
-    min-height: 100svh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 5rem 0 0;
-    box-sizing: border-box;
+.heroComposition {
+  position: relative;
+  flex: 1;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  padding: clamp(2rem, 5vh, 4rem) 0;
 }
 
-#secondHeading{
-    position: absolute;
-    color: #E7E7D6;
-    z-index: 1;
-    max-width: min(28rem, calc(100vw - 3rem));
-    left: clamp(1rem, 4vw, 3rem);
-    bottom: clamp(4rem, 9vh, 7rem);
-    font-size: clamp(1.1rem, 1.6vw, 1.75rem);
-    line-height: 1.5;
+.heroTitle {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(4rem, 11.5vw, 11.5rem);
+  font-weight: 400;
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+  text-transform: uppercase;
+}
+
+.heroTitle span {
+  display: block;
+  animation: titleReveal 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.heroTitle span:nth-child(2) {
+  margin-left: 8vw;
+  animation-delay: 90ms;
+}
+
+.heroTitle span:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.portrait {
+  position: absolute;
+  right: clamp(0rem, 4vw, 4rem);
+  bottom: 5%;
+  z-index: 1;
+  width: clamp(210px, 25vw, 390px);
+  margin: 0;
+}
+
+.portraitImage {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--rule);
+  background: var(--ink);
+}
+
+.portraitImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.15);
+  transform: scale(1.03);
+}
+
+.portrait figcaption {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.55rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroFooter {
+  align-items: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.heroFooter p {
+  max-width: 44ch;
+  margin: 0;
+}
+
+.heroFooter a {
+  color: var(--signal);
+  text-decoration: none;
+}
+
+.artifactSection,
+.selectedWork,
+.profileSection,
+.contactSection {
+  padding-top: clamp(5rem, 10vw, 10rem);
+}
+
+.sectionLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+
+.sectionLabel b {
+  color: var(--signal);
+}
+
+.sectionLabel > span:last-child {
+  color: var(--muted);
+  text-align: right;
+}
+
+.artifactHeading {
+  display: grid;
+  grid-template-columns: 1.6fr 0.6fr;
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: end;
+  padding: clamp(2.5rem, 6vw, 6rem) 0 clamp(2rem, 4vw, 4rem);
+}
+
+.artifactHeading h2,
+.profileGrid h2,
+.contactGrid h2 {
+  max-width: 18ch;
+  margin: 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(2.5rem, 6vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  text-transform: uppercase;
+}
+
+.artifactHeading p,
+.profileCopy p {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.roomFrame {
+  position: relative;
+  padding: 2.25rem 0;
+  border: 1px solid var(--ink);
+  background: #0a0a0a;
+  color: #e7e7d6;
 }
 
 .roomCanvas {
-    width: 100%;
-    height: 70vh;
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: min(74vh, 820px);
+  min-height: 460px;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.roomCanvas:active {
+  cursor: grabbing;
+}
+
+.roomStatus {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 3;
+  pointer-events: none;
+  color: #e7e7d6;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.frameLabel {
+  position: absolute;
+  right: 1rem;
+  left: 1rem;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.frameLabelTop {
+  top: 0.75rem;
+}
+
+.frameLabelBottom {
+  bottom: 0.75rem;
+}
+
+.sectionDisplayTitle {
+  margin: clamp(3rem, 7vw, 7rem) 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: 400;
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+  text-transform: uppercase;
+}
+
+.projectLookbook {
+  border-top: 1px solid var(--ink);
+}
+
+.lookbookProject {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding: clamp(1.25rem, 3vw, 2.5rem) 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+}
+
+.lookbookProject:nth-child(even) {
+  grid-template-columns: minmax(0, 1.45fr) minmax(230px, 0.55fr);
+}
+
+.lookbookProject:nth-child(even) .lookbookMeta {
+  order: 2;
+}
+
+.lookbookMeta {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+}
+
+.lookbookMeta h3 {
+  grid-column: 1 / -1;
+  align-self: center;
+  margin: 0;
+  font-family: var(--font-archivo-black), sans-serif;
+  font-size: clamp(2rem, 4vw, 4.75rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.lookbookMeta > span:first-child {
+  color: var(--signal);
+}
+
+.lookbookMedia {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--ink);
+}
+
+.lookbookMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) contrast(1.05);
+  transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 300ms ease;
+}
+
+.lookbookProject:hover .lookbookMedia img,
+.lookbookProject:focus-visible .lookbookMedia img {
+  transform: scale(1.025);
+  filter: saturate(1) contrast(1.05);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.textLink span,
+.contactAction span {
+  color: var(--signal);
+  transition: transform 180ms ease;
+}
+
+.textLink:hover span,
+.contactAction:hover span {
+  transform: translate(0.2rem, -0.2rem);
+}
+
+.profileGrid,
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: clamp(2rem, 8vw, 9rem);
+  padding: clamp(3rem, 8vw, 8rem) 0;
+}
+
+.profileCopy {
+  align-self: end;
+}
+
+.contactSection {
+  padding-bottom: clamp(5rem, 10vw, 10rem);
+}
+
+.contactGrid h2 {
+  max-width: 14ch;
+}
+
+.contactAction {
+  align-self: end;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@keyframes titleReveal {
+  from { opacity: 0; transform: translateY(0.65em); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes statusPulse {
+  50% { opacity: 0.35; }
 }
 
 @media (max-width: 900px) {
-    #firstSection {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-        padding-top: 8.5rem;
-        padding-bottom: 3rem;
-        gap: 1.5rem;
-    }
+  .heroComposition {
+    min-height: 610px;
+    align-items: flex-start;
+    padding-top: 4rem;
+  }
 
-    #firstHeading {
-        max-width: min(100%, 43ch);
-        font-size: clamp(1.25rem, 3.4vw, 3rem);
-    }
+  .heroTitle {
+    font-size: clamp(3.5rem, 14vw, 8rem);
+  }
 
-    .heroHeadshot {
-        justify-self: center;
-        width: min(78vw, 360px);
-    }
+  .portrait {
+    right: 0;
+    bottom: 2rem;
+    width: clamp(190px, 38vw, 320px);
+  }
 
-    #secondSection {
-        min-height: auto;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1.5rem;
-        padding: 3rem 0 0;
-    }
+  .artifactHeading,
+  .profileGrid,
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
 
-    #secondHeading {
-        position: static;
-        max-width: none;
-        padding: 0 1rem;
-        text-align: left;
-    }
+  .lookbookProject,
+  .lookbookProject:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
 
-    .roomCanvas {
-        height: min(62vh, 420px);
-    }
+  .lookbookProject:nth-child(even) .lookbookMeta {
+    order: 0;
+  }
+
+  .lookbookMeta {
+    min-height: 230px;
+  }
 }
 
-@media (max-width: 640px) {
-    #firstHeading .typewriter {
-        white-space: normal;
-    }
+@media (max-width: 600px) {
+  .hero {
+    min-height: calc(100svh - var(--header-height));
+  }
 
-    #firstHeading {
-        max-width: 100%;
-        font-size: clamp(1.15rem, 4vw, 2rem);
-    }
+  .heroEyebrow > span:last-child,
+  .heroFooter a {
+    display: none;
+  }
 
-    #secondHeading {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
+  .heroComposition {
+    min-height: 500px;
+    padding-top: 3rem;
+  }
 
-    .roomCanvas {
-        height: min(56vh, 360px);
-    }
+  .heroTitle {
+    font-size: clamp(3.3rem, 17vw, 6rem);
+    line-height: 0.83;
+  }
+
+  .heroTitle span:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .portrait {
+    width: min(52vw, 230px);
+    bottom: 1.5rem;
+  }
+
+  .artifactHeading h2,
+  .profileGrid h2,
+  .contactGrid h2 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .roomCanvas {
+    height: 58vh;
+    min-height: 420px;
+  }
+
+  .frameLabelBottom span:last-child {
+    display: none;
+  }
+
+  .sectionDisplayTitle {
+    font-size: clamp(3.8rem, 20vw, 7rem);
+  }
+
+  .lookbookMeta {
+    min-height: 190px;
+  }
 }

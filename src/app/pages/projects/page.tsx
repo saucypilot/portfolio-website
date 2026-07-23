@@ -1,372 +1,200 @@
-import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import "../../styles/projectsPage.css";
 import ProjectVideo from "./ProjectVideo";
 
-const PageName = () => {
-  return (
-    <main>
-      <div className="projectCard">
-        <Image
-          src="/projectPageAssets/sandSimulator.gif"
-          alt="Sand simulator animation"
-          width={500}
-          height={500}
-          className="projectCard__media"
-        />
-        <h1>Sand simulator</h1>
-        <p>
-          This project is a graphical simulation built using SDL2, modeling a
-          dynamic interaction of two elements; Sand particles that follow simple
-          granular physics, Bouncing circles affected by gravity and wall/floor
-          collisions. It demonstrates physics concepts such as gravity, velocity
-          damping, and collision response in a real-time interactive
-          environment.
-        </p>
-        <ul className="projectCard__stack" aria-label="Technologies used">
-          <li>
-            <a href="https://www.libsdl.org/" target="_blank" rel="noreferrer">
-              SDL2
-            </a>
-          </li>
-          <li>
-            <a href="https://isocpp.org/" target="_blank" rel="noreferrer">
-              C++
-            </a>
-          </li>
-        </ul>
-        <div className="projectCard__links">
-          <a
-            className="projectCard__link"
-            href="https://github.com/saucypilot/Sand-simulator"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open sand simulator project"
-          >
-            Visit project
-          </a>
-        </div>
-      </div>
-      <div className="projectCard">
-        <ProjectVideo
-          src="/projectPageAssets/solarSystem.webm"
-          aria-label="Solar system simulation demo"
-          loop
-          autoPlay
-          playsInline
-          controls
-          muted
-          width={500}
-          height={500}
-          className="projectCard__media"
-        />
-        <h1>Solar system simulator</h1>
-        <p>
-          A 3D interactive simulation of our solar system built with Three.js,
-          featuring orbiting planets, moons, an asteroid belt, and even shooting
-          stars. It&rsquo;s basically what you&rsquo;d get if NASA had a
-          graphics API and too much coffee. This is a visual simulation—not
-          scientifically accurate, but definitely fun to explore.
-        </p>
-        <ul className="projectCard__stack" aria-label="Technologies used">
-          <li>
-            <a href="https://threejs.org/" target="_blank" rel="noreferrer">
-              Three.js
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              target="_blank"
-              rel="noreferrer"
-            >
-              JavaScript
-            </a>
-          </li>
-        </ul>
-        <div className="projectCard__links">
-          <a
-            className="projectCard__link"
-            href="https://github.com/saucypilot/Solar-system-simulator"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open solar system simulator project"
-          >
-            Visit project
-          </a>
-        </div>
-      </div>
-      <div className="projectCard">
-        <ProjectVideo
-          src="/projectPageAssets/threejsCubeGame.webm"
-          aria-label="Cube game demo"
-          loop
-          autoPlay
-          playsInline
-          controls
-          muted
-          width={500}
-          height={500}
-          className="projectCard__media"
-        />
-
-        <h1>Cube game</h1>
-        <p>
-          This is a simple 3D browser-based game using Three.js, where the
-          player controls a green cube that can move and jump while avoiding
-          incoming red enemy cubes falling from the distance. The game showcases
-          basic physics such as gravity, velocity, and collision detection in 3D
-          space.
-        </p>
-        <ul className="projectCard__stack" aria-label="Technologies used">
-          <li>
-            <a href="https://threejs.org/" target="_blank" rel="noreferrer">
-              Three.js
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              target="_blank"
-              rel="noreferrer"
-            >
-              JavaScript
-            </a>
-          </li>
-        </ul>
-        <div className="projectCard__links">
-          <a
-            className="projectCard__link"
-            href="https://github.com/saucypilot/threejs-cube-game"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open cube game project"
-          >
-            Visit project
-          </a>
-        </div>
-      </div>
-      <div className="projectCard">
-        <Image
-          src="/projectPageAssets/hackUTA.png"
-          alt="HackUTA website picture"
-          width={500}
-          height={500}
-          className="projectCard__media"
-        />
-        <h1>2024 HackUTA Website</h1>
-        <p>
-          This is the official website for HackUTA 2024, a 24-hour hackathon
-          event held at the University of Texas at Arlington. The website was
-          built using React and Next.js, and features a modern design with
-          information about the event, schedule, onboarding, and more.
-        </p>
-        <ul className="projectCard__stack" aria-label="Technologies used">
-          <li>
-            <a href="https://react.dev/" target="_blank" rel="noreferrer">
-              React
-            </a>
-          </li>
-          <li>
-            <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-              Next.js
-            </a>
-          </li>
-        </ul>
-        <div className="projectCard__links">
-          <a
-            className="projectCard__link"
-            href="https://hackuta.org/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open HackUTA website project"
-          >
-            Visit project
-          </a>
-        </div>
-      </div>
-      <div className="projectCard">
-        <Image
-          src="/projectPageAssets/xquisite.png"
-          alt="Xquisite Dance center website screenshot"
-          width={500}
-          height={500}
-          className="projectCard__media"
-        />
-        <h1>Xquisite Dance Center Website</h1>
-        <p>
-          This is the official website for Xquisite Dance Center, a dance studio
-          located in Arlington, Texas. The website was built using React and
-          Next.js, and features a modern design.
-        </p>
-        <ul className="projectCard__stack" aria-label="Technologies used">
-          <li>
-            <a href="https://react.dev/" target="_blank" rel="noreferrer">
-              React
-            </a>
-          </li>
-          <li>
-            <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-              Next.js
-            </a>
-          </li>
-        </ul>
-        <div className="projectCard__links">
-          <a
-            className="projectCard__link"
-            href="https://xquisitedancecenter-gljht37d3-saucypilots-projects.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open Xquisite Dance Center website project"
-          >
-            Visit project
-          </a>
-        </div>
-      </div>
-      <div className="projectCard">
-        <Image
-          src="/projectPageAssets/trivio.gif"
-          alt="Triv.io Gif"
-          width={500}
-          height={500}
-          className="projectCard__media"
-        />
-        <h1>Triv.io</h1>
-        <p>
-          A web application that allows users to upload notes in any format and
-          turn them into quizzes using Gemini AI. It also allows people to join
-          the quiz too and include leaderboards. You can think it as Kahoot kind
-          of. It uses Auth0 for authentication and React.js for the frontend.
-        </p>
-        <ul className="projectCard__stack" aria-label="Technologies used">
-          <li>
-            <a href="https://react.dev/" target="_blank" rel="noreferrer">
-              React
-            </a>
-          </li>
-          <li>
-            <a href="https://auth0.com/" target="_blank" rel="noreferrer">
-              Auth0
-            </a>
-          </li>
-          <li>
-            <a href="https://gemini.google/" target="_blank" rel="noreferrer">
-              Gemini API
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              target="_blank"
-              rel="noreferrer"
-            >
-              JavaScript
-            </a>
-          </li>
-        </ul>
-        <div className="projectCard__links">
-          <a
-            className="projectCard__link"
-            href="https://github.com/Ashishrupani/Triv.io"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open Triv.io project"
-          >
-            Visit project
-          </a>
-        </div>
-      </div>
-      <div className="projectCard">
-        <Image
-          src="/projectPageAssets/drowsinessDetector.gif"
-          alt="Project screenshot"
-          width={500}
-          height={500}
-          className="projectCard__media"
-        />
-        <h1>Drowsiness detector</h1>
-        <p>
-          Real-Time Webcam Drowsiness Detection System is a computer vision
-          application designed to enhance safety during long tasks like driving
-          or late-night coding sessions. Built using Python, OpenCV, and
-          MediaPipe, the system monitors facial landmarks in real-time to detect
-          signs of fatigue through two primary biometric indicators: Eye Aspect
-          Ratio (EAR) and head pose analysis.
-        </p>
-        <ul className="projectCard__stack" aria-label="Technologies used">
-          <li>
-            <a href="https://www.python.org/" target="_blank" rel="noreferrer">
-              Python
-            </a>
-          </li>
-          <li>
-            <a href="https://opencv.org/" target="_blank" rel="noreferrer">
-              OpenCV
-            </a>
-          </li>
-          <li>
-            <a href="https://mediapipe.dev/" target="_blank" rel="noreferrer">
-              MediaPipe
-            </a>
-          </li>
-        </ul>
-        <div className="projectCard__links">
-          <a
-            className="projectCard__link"
-            href="https://github.com/saucypilot/Drowsiness-detector"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open project"
-          >
-            Visit project
-          </a>
-        </div>
-      </div>
-      <div className="projectCard">
-        <Image
-          src="/projectPageAssets/fluidSimulation.gif"
-          alt="Project screenshot"
-          width={500}
-          height={500}
-          className="projectCard__media"
-        />
-        <h1>Fluid simulation</h1>
-        <p>
-          This project is an interactive fluid dynamics simulation built with
-          WebGL2 that solves the Navier-Stokes equations for incompressible flow
-          in real-time. It uses a GPU-accelerated &quot;ping-pong&quot; FBO architecture
-          to efficiently manage semi-Lagrangian advection and Jacobi pressure
-          solvers. To maintain visual detail, I implemented vorticity
-          confinement to reinforce swirling motions that would otherwise
-          dissipate. The simulation features a filmic tonemapping curve for
-          high-dynamic-range visuals and supports multi-touch interaction for
-          stirring the fluid and injecting randomized dye colors.
-        </p>
-        <ul className="projectCard__stack" aria-label="Technologies used">
-          <li>
-            <a
-              href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API"
-              target="_blank"
-              rel="noreferrer"
-            >
-              WebGL2
-            </a>
-          </li>
-        </ul>
-        <div className="projectCard__links">
-          <a
-            className="projectCard__link"
-            href="https://github.com/saucypilot/webGL-Fluid-Simulation"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open project"
-          >
-            Visit project
-          </a>
-        </div>
-      </div>
-    </main>
-  );
+export const metadata: Metadata = {
+  title: "Selected Work",
+  description: "Interactive software, simulations, graphics, and web projects by Irian Duran.",
 };
 
-export default PageName;
+type Project = {
+  index: string;
+  title: string;
+  description: string;
+  type: string;
+  stack: string;
+  year: string;
+  media: string;
+  mediaType?: "video";
+  alt: string;
+  href: string;
+  linkLabel?: string;
+};
+
+const projects: Project[] = [
+  {
+    index: "01",
+    title: "Fluid Simulation",
+    description:
+      "A GPU-accelerated fluid dynamics experiment with real-time advection, pressure solving, vorticity, and multi-touch dye interaction.",
+    type: "Interactive Graphics",
+    stack: "WebGL2 / GLSL",
+    year: "2026",
+    media: "/projectPageAssets/fluidSimulation.gif",
+    alt: "Colorful real-time fluid simulation",
+    href: "https://github.com/saucypilot/webGL-Fluid-Simulation",
+  },
+  {
+    index: "02",
+    title: "Drowsiness Detector",
+    description:
+      "A real-time safety system that analyzes facial landmarks, eye aspect ratio, and head pose to recognize signs of fatigue.",
+    type: "Computer Vision",
+    stack: "Python / OpenCV / MediaPipe",
+    year: "2026",
+    media: "/projectPageAssets/drowsinessDetector.gif",
+    alt: "Drowsiness detection interface tracking facial landmarks",
+    href: "https://github.com/saucypilot/Drowsiness-detector",
+  },
+  {
+    index: "03",
+    title: "Solar System",
+    description:
+      "An explorable 3D solar system with orbiting planets, moons, an asteroid belt, and procedural shooting stars.",
+    type: "3D Simulation",
+    stack: "Three.js / JavaScript",
+    year: "2025",
+    media: "/projectPageAssets/solarSystem.webm",
+    mediaType: "video",
+    alt: "Solar system simulation demo",
+    href: "https://github.com/saucypilot/Solar-system-simulator",
+  },
+  {
+    index: "04",
+    title: "HackUTA 2024",
+    description:
+      "The official digital home for a 24-hour university hackathon, designed to make schedules, onboarding, and event details easy to navigate.",
+    type: "Event Platform",
+    stack: "React / Next.js",
+    year: "2024",
+    media: "/projectPageAssets/hackUTA.png",
+    alt: "HackUTA 2024 website",
+    href: "https://hackuta.org/",
+    linkLabel: "Live site",
+  },
+  {
+    index: "05",
+    title: "Sand Simulator",
+    description:
+      "A real-time granular physics playground combining falling sand, gravity-driven circles, damping, and collision response.",
+    type: "Physics Simulation",
+    stack: "C++ / SDL2",
+    year: "2025",
+    media: "/projectPageAssets/sandSimulator.gif",
+    alt: "Sand and bouncing circles physics simulation",
+    href: "https://github.com/saucypilot/Sand-simulator",
+  },
+  {
+    index: "06",
+    title: "Triv.io",
+    description:
+      "A collaborative study platform that turns uploaded notes into live multiplayer quizzes with AI-generated questions and leaderboards.",
+    type: "AI Web Application",
+    stack: "React / Auth0 / Gemini",
+    year: "2024",
+    media: "/projectPageAssets/trivio.gif",
+    alt: "Triv.io collaborative quiz interface",
+    href: "https://github.com/Ashishrupani/Triv.io",
+  },
+  {
+    index: "07",
+    title: "Cube Game",
+    description:
+      "A browser-based 3D game exploring movement, jumping, gravity, collision detection, and progressively incoming obstacles.",
+    type: "Browser Game",
+    stack: "Three.js / JavaScript",
+    year: "2024",
+    media: "/projectPageAssets/threejsCubeGame.webm",
+    mediaType: "video",
+    alt: "Three.js cube game demo",
+    href: "https://github.com/saucypilot/threejs-cube-game",
+  },
+  {
+    index: "08",
+    title: "Xquisite Dance",
+    description:
+      "A focused marketing site for an Arlington dance studio, giving families a clear path to explore programs and connect with the team.",
+    type: "Client Website",
+    stack: "React / Next.js",
+    year: "2024",
+    media: "/projectPageAssets/xquisite.png",
+    alt: "Xquisite Dance Center website",
+    href: "https://xquisitedancecenter-gljht37d3-saucypilots-projects.vercel.app/",
+    linkLabel: "Live site",
+  },
+];
+
+export default function ProjectsPage() {
+  return (
+    <main id="main-content" className="projectsPage">
+      <header className="archiveHero">
+        <div className="archiveKicker">
+          <span><b>01</b> / Work archive</span>
+          <span>2024—2026</span>
+        </div>
+        <h1>Selected<br />Work.</h1>
+        <div className="archiveIntro">
+          <p>
+            Experiments and products spanning interactive graphics, creative development,
+            computer vision, physical systems, and the web.
+          </p>
+          <span>{projects.length.toString().padStart(2, "0")} projects / Scroll to explore</span>
+        </div>
+      </header>
+
+      <section className="projectIndex" aria-label="Project archive">
+        {projects.map((project) => (
+          <article className="archiveProject" key={project.title}>
+            <div className="archiveProjectMeta">
+              <span className="projectNumber">{project.index}</span>
+              <div>
+                <span>Type</span>
+                <p>{project.type}</p>
+              </div>
+              <div>
+                <span>Stack</span>
+                <p>{project.stack}</p>
+              </div>
+              <div>
+                <span>Year</span>
+                <p>{project.year}</p>
+              </div>
+            </div>
+
+            <a
+              className="archiveMedia"
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${project.title}`}
+            >
+              {project.mediaType === "video" ? (
+                <ProjectVideo
+                  src={project.media}
+                  aria-label={project.alt}
+                  loop
+                  autoPlay
+                  playsInline
+                  muted
+                  width={1400}
+                  height={880}
+                />
+              ) : (
+                <Image src={project.media} alt={project.alt} width={1400} height={880} />
+              )}
+            </a>
+
+            <div className="archiveProjectCopy">
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+              <a href={project.href} target="_blank" rel="noreferrer">
+                {project.linkLabel ?? "View source"} <span>↗</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </section>
+    </main>
+  );
+}
