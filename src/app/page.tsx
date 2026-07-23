@@ -3,36 +3,6 @@ import Link from "next/link";
 import Room from "./components/threeJSLandingPage";
 import "./styles/homePage.css";
 
-const selectedProjects = [
-  {
-    index: "01",
-    title: "Fluid Simulation",
-    type: "GPU Graphics / Interactive",
-    year: "2026",
-    media: "/projectPageAssets/fluidSimulation.gif",
-    alt: "Colorful real-time fluid simulation",
-    href: "https://github.com/saucypilot/webGL-Fluid-Simulation",
-  },
-  {
-    index: "02",
-    title: "Drowsiness Detector",
-    type: "Computer Vision / Safety",
-    year: "2026",
-    media: "/projectPageAssets/drowsinessDetector.gif",
-    alt: "Drowsiness detector tracking facial landmarks",
-    href: "https://github.com/saucypilot/Drowsiness-detector",
-  },
-  {
-    index: "03",
-    title: "HackUTA 2024",
-    type: "Event Platform / Frontend",
-    year: "2024",
-    media: "/projectPageAssets/hackUTA.png",
-    alt: "HackUTA website project preview",
-    href: "https://hackuta.org/",
-  },
-];
-
 function SectionLabel({
   index,
   title,
@@ -111,39 +81,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="selectedWork" aria-labelledby="work-title">
-        <SectionLabel index="02" title="Selected work" detail="2024—2026" />
-        <h2 id="work-title" className="sectionDisplayTitle">Selected<br />Work.</h2>
-
-        <div className="projectLookbook">
-          {selectedProjects.map((project) => (
-            <a
-              className="lookbookProject"
-              href={project.href}
-              target="_blank"
-              rel="noreferrer"
-              key={project.title}
-            >
-              <div className="lookbookMeta">
-                <span>{project.index}</span>
-                <h3>{project.title}</h3>
-                <span>{project.type}</span>
-                <span>{project.year} ↗</span>
-              </div>
-              <div className="lookbookMedia">
-                <Image src={project.media} alt={project.alt} width={1200} height={760} />
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <Link className="textLink" href="/pages/projects">
-          View the complete project archive <span>↗</span>
-        </Link>
-      </section>
-
       <section className="profileSection" aria-labelledby="profile-title">
-        <SectionLabel index="03" title="Profile" detail="Art × Engineering" />
+        <SectionLabel index="02" title="Profile" detail="Art × Engineering" />
         <div className="profileGrid">
           <h2 id="profile-title">I build software where engineering meets interaction.</h2>
           <div className="profileCopy">
@@ -159,7 +98,7 @@ export default function Home() {
       </section>
 
       <section className="contactSection" aria-labelledby="contact-title">
-        <SectionLabel index="04" title="Contact" detail="Open to collaboration" />
+        <SectionLabel index="03" title="Contact" detail="Open to collaboration" />
         <div className="contactGrid">
           <h2 id="contact-title">Let’s make something worth exploring.</h2>
           <a

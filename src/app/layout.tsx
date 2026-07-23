@@ -43,7 +43,8 @@ export const metadata: Metadata = {
 };
 
 const navigation = [
-  { label: "Work", href: "/pages/projects" },
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/pages/projects" },
   { label: "About", href: "/pages/about" },
   { label: "Capabilities", href: "/pages/skills" },
 ];

@@ -4,7 +4,7 @@ import "../../styles/projectsPage.css";
 import ProjectVideo from "./ProjectVideo";
 
 export const metadata: Metadata = {
-  title: "Selected Work",
+  title: "Projects",
   description: "Interactive software, simulations, graphics, and web projects by Irian Duran.",
 };
 
@@ -130,10 +130,10 @@ export default function ProjectsPage() {
     <main id="main-content" className="projectsPage">
       <header className="archiveHero">
         <div className="archiveKicker">
-          <span><b>01</b> / Work archive</span>
+          <span><b>02</b> / Project archive</span>
           <span>2024—2026</span>
         </div>
-        <h1>Selected<br />Work.</h1>
+        <h1>Selected<br />Projects.</h1>
         <div className="archiveIntro">
           <p>
             Experiments and products spanning interactive graphics, creative development,
