@@ -23,7 +23,7 @@ export default function MotionSystem() {
       animationFrame = window.requestAnimationFrame(() => {
         const scrollable = document.documentElement.scrollHeight - window.innerHeight;
         const amount = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
-        progress.style.transform = `scaleX(${amount})`;
+        progress.style.transform = `scaleY(${amount})`;
       });
     };
 

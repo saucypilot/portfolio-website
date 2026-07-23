@@ -35,6 +35,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-height) + 1rem);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -56,15 +62,15 @@ main {
 
 .scrollProgress {
   position: fixed;
-  top: calc(var(--header-height) - 2px);
+  top: var(--header-height);
   right: 0;
-  left: 0;
+  bottom: 0;
   z-index: 1100;
-  height: 2px;
+  width: 3px;
   pointer-events: none;
   background: var(--signal);
-  transform: scaleX(0);
-  transform-origin: left center;
+  transform: scaleY(0);
+  transform-origin: center top;
   will-change: transform;
 }
 
