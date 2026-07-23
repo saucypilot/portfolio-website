@@ -123,6 +123,18 @@ const projects: Project[] = [
     href: "https://xquisitedancecenter-gljht37d3-saucypilots-projects.vercel.app/",
     linkLabel: "Live site",
   },
+  {
+    index: "02.09",
+    title: "Satellite Tracker",
+    description:
+      "An interactive satellite-tracking experience for exploring orbital position and trajectory data in real time.",
+    type: "Data Visualization",
+    stack: "JavaScript / Satellite APIs",
+    year: "2026",
+    media: "/projectPageAssets/satelliteTracker.gif",
+    alt: "Satellite Tracker interface visualizing orbital data",
+    href: "https://github.com/saucypilot/Satellite-tracker",
+  },
 ];
 
 export default function ProjectsPage() {
