@@ -38,7 +38,7 @@ export default function Home() {
             <span>Engineer.</span>
           </h1>
 
-          <figure className="portrait" data-reveal="media">
+        <figure className="portrait">
             <div className="portraitImage" data-tilt>
               <Image
                 src="/headshot.png"

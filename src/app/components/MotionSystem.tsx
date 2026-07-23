@@ -36,6 +36,7 @@ export default function MotionSystem() {
     );
 
     let observer: IntersectionObserver | null = null;
+    let revealFallback: number | undefined;
     if (!reducedMotion) {
       observer = new IntersectionObserver(
         (entries) => {
@@ -52,6 +53,10 @@ export default function MotionSystem() {
         target.style.setProperty("--reveal-delay", `${(index % 4) * 55}ms`);
         observer?.observe(target);
       });
+      // Never let an animation issue hide content indefinitely.
+      revealFallback = window.setTimeout(() => {
+        revealTargets.forEach((target) => target.classList.add("is-visible"));
+      }, 1200);
     } else {
       revealTargets.forEach((target) => target.classList.add("is-visible"));
     }
@@ -88,6 +93,7 @@ export default function MotionSystem() {
     return () => {
       cancelAnimationFrame(animationFrame);
       observer?.disconnect();
+      if (revealFallback !== undefined) window.clearTimeout(revealFallback);
       tiltCleanups.forEach((cleanup) => cleanup());
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("resize", updateProgress);
