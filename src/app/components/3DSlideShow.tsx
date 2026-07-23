@@ -24,9 +24,13 @@ type Slide = {
   id: string;
   label: string;
   subtitle?: string;
-  modelSrc: string; // public/ path to .glb
+  modelSrc: string; // public/ path to a glTF or GLB model
   fit?: "center" | "contain" | "cover"; // bound-fit preference
   initialRotation?: [number, number, number];
+  credit?: {
+    label: string;
+    href: string;
+  };
 };
 
 // ---- Model wrapper ----
@@ -116,6 +120,20 @@ export default function InterestsShowcase() {
         subtitle: "Blunder? I prefer ‘creative’",
         modelSrc: "/threejsModels/otherInterestsShowcase/chess.glb",
         initialRotation: [0, Math.PI * 0.25, 0],
+      },
+      {
+        id: "brazilian-jiu-jitsu",
+        label: "Brazilian Jiu-Jitsu",
+        subtitle:
+          "A practice in discipline, patience, and finding the next move under pressure.",
+        modelSrc:
+          "/threejsModels/otherInterestsShowcase/brazilian-jiu-jitsu/scene.gltf",
+        initialRotation: [0, Math.PI * 0.15, 0],
+        credit: {
+          label: "3D model by Tulio Portela / CC BY 4.0",
+          href:
+            "https://sketchfab.com/3d-models/brazilian-jiu-jitsu-black-belt-fighter-free-82ed688a48c44c3d8b35aab2ed77d11a",
+        },
       },
       {
         id: "guitar",
@@ -209,6 +227,16 @@ export default function InterestsShowcase() {
                   Next
                 </button>
               </div>
+              {active.credit && (
+                <a
+                  className="block pt-2 text-[10px] uppercase tracking-wide opacity-70 underline underline-offset-4 hover:opacity-100"
+                  href={active.credit.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {active.credit.label}
+                </a>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
