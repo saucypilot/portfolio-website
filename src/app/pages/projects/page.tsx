@@ -120,7 +120,7 @@ const projects: Project[] = [
     year: "2024",
     media: "/projectPageAssets/xquisite.png",
     alt: "Xquisite Dance Center website",
-    href: "https://xquisitedancecenter-gljht37d3-saucypilots-projects.vercel.app/",
+    href: "https://xquisitedancecenter.vercel.app/",
     linkLabel: "Live site",
   },
   {
